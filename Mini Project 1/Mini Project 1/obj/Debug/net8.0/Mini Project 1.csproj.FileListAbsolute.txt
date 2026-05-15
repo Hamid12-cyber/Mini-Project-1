@@ -12,3 +12,21 @@ C:\Users\Asus\Desktop\programlasdirma sekil\Mini Project 1\Mini Project 1\obj\De
 C:\Users\Asus\Desktop\programlasdirma sekil\Mini Project 1\Mini Project 1\obj\Debug\net8.0\Mini Project 1.pdb
 C:\Users\Asus\Desktop\programlasdirma sekil\Mini Project 1\Mini Project 1\obj\Debug\net8.0\Mini Project 1.genruntimeconfig.cache
 C:\Users\Asus\Desktop\programlasdirma sekil\Mini Project 1\Mini Project 1\obj\Debug\net8.0\ref\Mini Project 1.dll
+C:\Users\Asus\Desktop\Mini projecthm\Mini Project 1\Mini Project 1\bin\Debug\net8.0\Mini Project 1.exe
+C:\Users\Asus\Desktop\Mini projecthm\Mini Project 1\Mini Project 1\bin\Debug\net8.0\Mini Project 1.deps.json
+C:\Users\Asus\Desktop\Mini projecthm\Mini Project 1\Mini Project 1\bin\Debug\net8.0\Mini Project 1.runtimeconfig.json
+C:\Users\Asus\Desktop\Mini projecthm\Mini Project 1\Mini Project 1\bin\Debug\net8.0\Mini Project 1.dll
+C:\Users\Asus\Desktop\Mini projecthm\Mini Project 1\Mini Project 1\bin\Debug\net8.0\Mini Project 1.pdb
+C:\Users\Asus\Desktop\Mini projecthm\Mini Project 1\Mini Project 1\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Asus\Desktop\Mini projecthm\Mini Project 1\Mini Project 1\obj\Debug\net8.0\Mini Project 1.csproj.AssemblyReference.cache
+C:\Users\Asus\Desktop\Mini projecthm\Mini Project 1\Mini Project 1\obj\Debug\net8.0\Mini Project 1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Asus\Desktop\Mini projecthm\Mini Project 1\Mini Project 1\obj\Debug\net8.0\Mini Project 1.AssemblyInfoInputs.cache
+C:\Users\Asus\Desktop\Mini projecthm\Mini Project 1\Mini Project 1\obj\Debug\net8.0\Mini Project 1.AssemblyInfo.cs
+C:\Users\Asus\Desktop\Mini projecthm\Mini Project 1\Mini Project 1\obj\Debug\net8.0\Mini Project 1.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\Mini projecthm\Mini Project 1\Mini Project 1\obj\Debug\net8.0\Mini Project 1.sourcelink.json
+C:\Users\Asus\Desktop\Mini projecthm\Mini Project 1\Mini Project 1\obj\Debug\net8.0\Mini Pro.6F5FD884.Up2Date
+C:\Users\Asus\Desktop\Mini projecthm\Mini Project 1\Mini Project 1\obj\Debug\net8.0\Mini Project 1.dll
+C:\Users\Asus\Desktop\Mini projecthm\Mini Project 1\Mini Project 1\obj\Debug\net8.0\refint\Mini Project 1.dll
+C:\Users\Asus\Desktop\Mini projecthm\Mini Project 1\Mini Project 1\obj\Debug\net8.0\Mini Project 1.pdb
+C:\Users\Asus\Desktop\Mini projecthm\Mini Project 1\Mini Project 1\obj\Debug\net8.0\Mini Project 1.genruntimeconfig.cache
+C:\Users\Asus\Desktop\Mini projecthm\Mini Project 1\Mini Project 1\obj\Debug\net8.0\ref\Mini Project 1.dll

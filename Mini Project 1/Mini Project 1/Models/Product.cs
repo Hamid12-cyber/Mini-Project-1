@@ -59,13 +59,9 @@ namespace Mini_Project_1.Models
         }
         public int Id { get; set; }
         public Product() { }
-        public Product(string name, decimal price, int stock, List<string> existingNames)
+        public Product(string name, decimal price, int stock)
         {
-            
-            if (existingNames.Any(n => n.Equals(name.Trim(), StringComparison.OrdinalIgnoreCase)))
-                throw new ArgumentException($"'{name.Trim()}' adlı məhsul artıq mövcuddur.");
-
-            Id = _idCounter++;
+            Id = _idCounter ++;
             Name = name;   
             Price = price;  
             Stock = stock;  
