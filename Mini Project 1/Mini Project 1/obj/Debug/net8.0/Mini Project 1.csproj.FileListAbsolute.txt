@@ -30,3 +30,12 @@ C:\Users\Asus\Desktop\Mini projecthm\Mini Project 1\Mini Project 1\obj\Debug\net
 C:\Users\Asus\Desktop\Mini projecthm\Mini Project 1\Mini Project 1\obj\Debug\net8.0\Mini Project 1.pdb
 C:\Users\Asus\Desktop\Mini projecthm\Mini Project 1\Mini Project 1\obj\Debug\net8.0\Mini Project 1.genruntimeconfig.cache
 C:\Users\Asus\Desktop\Mini projecthm\Mini Project 1\Mini Project 1\obj\Debug\net8.0\ref\Mini Project 1.dll
+C:\Users\hamidim\Mini-Project-1\Mini Project 1\Mini Project 1\obj\Debug\net8.0\Mini Project 1.csproj.AssemblyReference.cache
+C:\Users\hamidim\Mini-Project-1\Mini Project 1\Mini Project 1\obj\Debug\net8.0\Mini Project 1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hamidim\Mini-Project-1\Mini Project 1\Mini Project 1\obj\Debug\net8.0\Mini Project 1.AssemblyInfoInputs.cache
+C:\Users\hamidim\Mini-Project-1\Mini Project 1\Mini Project 1\obj\Debug\net8.0\Mini Project 1.AssemblyInfo.cs
+C:\Users\hamidim\Mini-Project-1\Mini Project 1\Mini Project 1\obj\Debug\net8.0\Mini Project 1.csproj.CoreCompileInputs.cache
+C:\Users\hamidim\Mini-Project-1\Mini Project 1\Mini Project 1\obj\Debug\net8.0\Mini Project 1.sourcelink.json
+C:\Users\hamidim\Mini-Project-1\Mini Project 1\Mini Project 1\obj\Debug\net8.0\Mini Project 1.dll
+C:\Users\hamidim\Mini-Project-1\Mini Project 1\Mini Project 1\obj\Debug\net8.0\refint\Mini Project 1.dll
+C:\Users\hamidim\Mini-Project-1\Mini Project 1\Mini Project 1\obj\Debug\net8.0\Mini Project 1.pdb

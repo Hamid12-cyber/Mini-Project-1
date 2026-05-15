@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "wpBBfMlomh0=",
+  "dgSpecHash": "55IidjKW47k=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\Mini Project 1.csproj",
+  "projectFilePath": "C:\\Users\\hamidim\\Mini-Project-1\\Mini Project 1\\Mini Project 1\\Mini Project 1.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Asus\\.nuget\\packages\\newtonsoft.json\\13.0.4\\newtonsoft.json.13.0.4.nupkg.sha512"
+    "C:\\Users\\hamidim\\.nuget\\packages\\newtonsoft.json\\13.0.4\\newtonsoft.json.13.0.4.nupkg.sha512"
   ],
   "logs": []
 }

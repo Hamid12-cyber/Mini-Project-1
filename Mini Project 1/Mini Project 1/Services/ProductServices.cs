@@ -12,7 +12,7 @@ namespace Mini_Project_1.Services
     {
         private static readonly string _path = @"C:\Users\Asus\Desktop\Mini projecthm\Mini Project 1\Mini Project 1\Data\Product.json" ;
 
-        public void Serialize(List <Product> items) 
+        protected void Serialize(List <Product> items) 
         {
             string json = JsonConvert.SerializeObject(items) ;
             using (StreamWriter sw = new StreamWriter(_path)) 
@@ -21,7 +21,7 @@ namespace Mini_Project_1.Services
             }
 
         }
-        public List<Product> Deserialize() 
+        protected List<Product> Deserialize() 
         {
             string json;
             using (StreamReader sr = new(_path)) 
@@ -110,6 +110,26 @@ namespace Mini_Project_1.Services
                 string stockStatus = p.Stock == 0 ? " - [Out of Stock]" : "";
                 p.PrintInfo();
             }
+
+        }
+        public void RefillProduct(int id, int amount) 
+        {
+            if (amount <= 0) 
+            {
+                Console.WriteLine($"Daxil olunan stock 0 vəya mənfi ola bilməz");
+            }
+            List<Product>products = Deserialize();
+            
+            Product? productToUpdate = products.Find(p=>p.Id == id);
+
+            if (productToUpdate != null) 
+            {
+                Console.WriteLine($"Məhsul tapılmadı");
+                return;
+            }
+            productToUpdate.Stock += amount;
+            Serialize(products);
+            Console.WriteLine($"Uğurlu! '{productToUpdate.Name}' məhsulunun yeni stoku: {productToUpdate.Stock}");
 
         }
     }

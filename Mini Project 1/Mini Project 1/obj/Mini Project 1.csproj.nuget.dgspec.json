@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\Mini Project 1.csproj": {}
+    "C:\\Users\\hamidim\\Mini-Project-1\\Mini Project 1\\Mini Project 1\\Mini Project 1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\Mini Project 1.csproj": {
+    "C:\\Users\\hamidim\\Mini-Project-1\\Mini Project 1\\Mini Project 1\\Mini Project 1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\Mini Project 1.csproj",
+        "projectUniqueName": "C:\\Users\\hamidim\\Mini-Project-1\\Mini Project 1\\Mini Project 1\\Mini Project 1.csproj",
         "projectName": "Mini Project 1",
-        "projectPath": "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\Mini Project 1.csproj",
-        "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\obj\\",
+        "projectPath": "C:\\Users\\hamidim\\Mini-Project-1\\Mini Project 1\\Mini Project 1\\Mini Project 1.csproj",
+        "packagesPath": "C:\\Users\\hamidim\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hamidim\\Mini-Project-1\\Mini Project 1\\Mini Project 1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hamidim\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -31,7 +31,6 @@
         },
         "frameworks": {
           "net8.0": {
-            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {}
           }
@@ -46,11 +45,10 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "10.0.100"
       },
       "frameworks": {
         "net8.0": {
-          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "Newtonsoft.Json": {
@@ -74,7 +72,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
