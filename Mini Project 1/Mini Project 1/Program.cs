@@ -8,6 +8,7 @@ namespace Mini_Project_1
         static void Main(string[] args)
         {
             ProductServices productServices = new ProductServices();
+            OrderProduct orderProduct = new OrderProduct();
 
             bool isRunning = true;
 
@@ -54,7 +55,33 @@ namespace Mini_Project_1
                     case "4":
                         productServices.ShowAllProducts();
                         break;
-
+                    case "5":
+                        Console.WriteLine("\n--- Məhsulun Stokunu Artırın---");
+                        Console.Write("Məhsulun ID-sini daxil edin: ");
+                        if (!int.TryParse(Console.ReadLine(), out int id))
+                        {
+                            Console.WriteLine("ID düzgün formatda deyil (rəqəm olmalıdır).");
+                            break;
+                        }
+                        Console.Write("Artırılacaq miqdarı daxil edin: ");
+                        if (!int.TryParse(Console.ReadLine(), out int amount))
+                        {
+                            Console.WriteLine("Miqdar düzgün formatda deyil (rəqəm olmalıdır).");
+                            break;
+                        }
+                        productServices.RefillProduct(id, amount);
+                        break;
+                    case "6":
+                        Console.WriteLine("\n--- Yeni Sifariş ---");
+                        orderProduct.Orderproduct(productServices);
+                        break;
+                    case "7":
+                        Console.WriteLine("\n================ BÜTÜN SİFARİŞLƏR ================");
+                        orderProduct.ShowAllOrders();
+                        break;
+                    case "8":
+                        orderProduct.ChangeOrderStatus();
+                        break;
                     case "0":
                         isRunning = false;
                         Console.WriteLine("Proqramdan cixildi.");

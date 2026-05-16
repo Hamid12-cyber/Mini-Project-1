@@ -12,7 +12,7 @@ namespace Mini_Project_1.Services
     {
         private static readonly string _path = @"C:\Users\Asus\Desktop\Mini projecthm\Mini Project 1\Mini Project 1\Data\Product.json" ;
 
-        protected void Serialize(List <Product> items) 
+        public void Serialize(List <Product> items) 
         {
             string json = JsonConvert.SerializeObject(items) ;
             using (StreamWriter sw = new StreamWriter(_path)) 
@@ -21,7 +21,7 @@ namespace Mini_Project_1.Services
             }
 
         }
-        protected List<Product> Deserialize() 
+        public List<Product> Deserialize() 
         {
             string json;
             using (StreamReader sr = new(_path)) 
@@ -122,7 +122,7 @@ namespace Mini_Project_1.Services
             
             Product? productToUpdate = products.Find(p=>p.Id == id);
 
-            if (productToUpdate != null) 
+            if (productToUpdate == null) 
             {
                 Console.WriteLine($"Məhsul tapılmadı");
                 return;
