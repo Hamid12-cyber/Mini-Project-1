@@ -28,8 +28,8 @@ namespace Mini_Project_1
                 switch (choice)
                 {
                     case "1":
-                        Console.Clear();
-                        Console.Write("Ad: "); string name = Console.ReadLine();
+                        Console.Clear();                        
+                        Console.Write("Ad: "); string name = Console.ReadLine();                        
                         Console.Write("Qiymet: "); decimal price = decimal.Parse(Console.ReadLine());
                         Console.Write("Stok: "); int stock = int.Parse(Console.ReadLine());
                         productServices .CreateProduct(name, price, stock);

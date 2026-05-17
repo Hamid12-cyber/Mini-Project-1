@@ -1,20 +1,44 @@
 [
   {
-    "Name": "Toyota",
-    "Price": 32000.0,
-    "Stock": 43,
-    "Id": 1
-  },
-  {
     "Name": "Lexus",
     "Price": 90000.0,
-    "Stock": 22,
+    "Stock": 15,
     "Id": 2
   },
   {
     "Name": "Mazda",
     "Price": 30000.0,
-    "Stock": 115,
+    "Stock": 86,
     "Id": 3
+  },
+  {
+    "Name": "Beer",
+    "Price": 12.0,
+    "Stock": 34,
+    "Id": 4
+  },
+  {
+    "Name": "Jam",
+    "Price": 450.0,
+    "Stock": 3,
+    "Id": 5
+  },
+  {
+    "Name": "Kazbek",
+    "Price": 10.0,
+    "Stock": 21,
+    "Id": 6
+  },
+  {
+    "Name": "Maz",
+    "Price": 50.0,
+    "Stock": 12,
+    "Id": 7
+  },
+  {
+    "Name": "0",
+    "Price": 12.0,
+    "Stock": 32,
+    "Id": 8
   }
 ]

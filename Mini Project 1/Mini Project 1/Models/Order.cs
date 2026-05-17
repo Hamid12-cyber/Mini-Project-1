@@ -26,7 +26,7 @@ namespace Mini_Project_1.Models
                     sum += item.SubTotal;
                 }
 
-                return sum;
+                return sum + DeliveryFee;
             }
 
         }
@@ -39,14 +39,18 @@ namespace Mini_Project_1.Models
                 _email = value;
             }
         }
+        public string DeliveryType { get; set; }
+        public decimal DeliveryFee { get; set; }
         public OrderStatus Status { get; set; } = OrderStatus.Pending;
         public DateTime OrderedAt { get; set; }
         public Order() { }
-        public Order(string email, List<OrderItem> items)
+        public Order(string email, List<OrderItem> items, string deliveryType, decimal deliveryFee)
         {
             Id = _idCounter++;
             Email = email;
-            Items = items;
+            DeliveryType = deliveryType;
+            DeliveryFee = deliveryFee;
+            Items = items;            
             Status = OrderStatus.Pending;
             OrderedAt = DateTime.Now;
         }

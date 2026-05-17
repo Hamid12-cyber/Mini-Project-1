@@ -12,11 +12,10 @@ namespace Mini_Project_1.Services
     internal class ProductServices
     {
         internal ProductRepostory ProductRepo { get; set; } = new();
-        public object OrderRepo { get; internal set; }
-
+        
         public void CreateProduct(string name, decimal price, int stock)
         {
-            List<Product> products = ProductRepo.Deserialize();
+            List<Product> products = ProductRepo.Deserialize();            
             foreach (Product p in products)
             {
                 if (p.Name.ToLower () == name.Trim().ToLower() )
@@ -32,7 +31,7 @@ namespace Mini_Project_1.Services
             Product newProduct = new Product(name, price, stock);
             products.Add(newProduct);
             ProductRepo.Serialize(products);
-            Console.WriteLine("Məhsul uğurla yaradıldı və fayla yazıldı.");
+            Console.WriteLine($"Məhsul uğurla yaradıldı \n\nMəhsul adı: {newProduct.Name}\nQiymət: {newProduct.Price}\nStok: {newProduct.Stock}");
         }
         public void DeleteProduct(int id)
         {

@@ -20,13 +20,12 @@ namespace Mini_Project_1.Services
             string email = Console.ReadLine();
             if (string.IsNullOrEmpty(email) || !email.Contains("@"))
             {
-                Console.WriteLine($"Email formatı düzgün deyil @ mütləq olmalıdır");
+                Console.WriteLine("Email formatı düzgün deyil, @ mütləq olmalıdır.");
                 return;
             }
+
             List<OrderItem> orderitems = new List<OrderItem>();
-
             List<Product> allProducts = productServices.ProductRepo.Deserialize();
-
             while (true)
             {
                 Console.Write("\nAlmaq istədiyiniz məhsulun ID-sini daxil edin (çıxmaq üçün 0): ");
@@ -41,16 +40,9 @@ namespace Mini_Project_1.Services
                     break;
 
                 Product product = allProducts.Find(p => p.Id == productId);
-
                 if (product == null)
                 {
                     Console.WriteLine("Məhsul tapılmadı!");
-                    continue;
-                }
-
-                if (product.Stock <= 0)
-                {
-                    Console.WriteLine("Məhsul stokda yoxdur!");
                     continue;
                 }
 
@@ -74,25 +66,75 @@ namespace Mini_Project_1.Services
                 productServices.ProductRepo.Serialize(allProducts);
 
                 Console.WriteLine($"✓ '{product.Name}' x{count} səbətə əlavə edildi.");
-
                 Console.Write("Başqa məhsul əlavə etmək istəyirsiniz? (b - Bəli / x - Xeyr): ");
                 string choice = Console.ReadLine()?.Trim().ToLower();
 
-                if (choice != "b" && choice != "beli")
+                if (choice != "b" && choice != "bəli")
                     break;
             }
-
+            Console.Clear();
             if (orderitems.Count == 0)
             {
                 Console.WriteLine("Heç məhsul seçilmədi, sifariş ləğv edildi.");
                 return;
-            }                  
+            }
+            decimal deliveryFee = 0;
+            string deliveryType = "";
+
+            while (true)
+            {
+                Console.WriteLine("\nÇatdırılma növünü seçin:");
+                Console.WriteLine("  1 - Özüm götürəcəm (Pulsuz)");
+                Console.WriteLine("  2 - Kuryer ilə (5 Azn)");
+                Console.WriteLine("  0 - Sifarişi ləğv et");
+                Console.Write("Seçiminiz: ");
+
+                string deliveryChoice = Console.ReadLine()?.Trim();
+
+                if (deliveryChoice == "0")
+                {
+                    Console.WriteLine("Sifariş ləğv edildi.");
+                    return;
+                }
+                else if (deliveryChoice == "1")
+                {
+                    deliveryType = "Özüm götürəcəm";
+                    deliveryFee = 0;
+                    break;
+                }
+                else if (deliveryChoice == "2")
+                {
+                    Console.Clear();
+                    Console.Write("Çatdırılma ünvanını daxil edin: ");
+                    string address = Console.ReadLine();
+
+                    if (string.IsNullOrWhiteSpace(address))
+                    {
+                        Console.WriteLine("Ünvan boş ola bilməz, yenidən daxil edin.");
+                        continue;
+                    }
+
+                    deliveryType = "Kuryer ilə";
+                    deliveryFee = 5;
+                    Console.WriteLine($"Ünvan: {address}");
+                    break;
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("Yanlış seçim, yenidən cəhd edin.");
+                    continue;
+                }
+            }
             List<Order> orders = OrderRepo.Deserialize();
-            Order order = new Order(email, orderitems);
+            Order order = new Order(email, orderitems, deliveryType, deliveryFee);
             orders.Add(order);
             OrderRepo.Serialize(orders);
 
-            Console.WriteLine($"\n✓ Sifariş yaradıldı! Cəmi: {order.Total} Azn");
+            Console.WriteLine($"\n✓ Sifariş yaradıldı!");
+            Console.WriteLine($"   Məhsul cəmi : {order.Total - order.DeliveryFee} Azn");
+            Console.WriteLine($"   Çatdırılma  : {order.DeliveryFee} Azn ({order.DeliveryType})");
+            Console.WriteLine($"   Ümumi cəmi  : {order.Total} Azn");
         }
         public void ShowAllOrders()
         {
