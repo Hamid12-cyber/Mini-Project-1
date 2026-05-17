@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mini_Project_1.AbstractClasses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Mini_Project_1.Models
 {
-    internal class Product
+    internal class Product : BaseEntity
     {
         private string _name;
         private decimal _price;
@@ -18,9 +19,10 @@ namespace Mini_Project_1.Models
             get { return _name; } 
             set 
             {
-                if (value.Trim().Length < 1)
-                    throw new ArgumentException("Məhsulun adı ən azı 1 simvol olmalıdır.");
+                if (value.Trim().Length < 1 )
+                    throw new ArgumentException("Məhsulun adı ən azı 1 simvol olmalıdır və rəqəmsiz olmalıdır.");
                 _name = char.ToUpper(value[0]) + value.Substring(1).ToLower().Trim();
+                
             }
         }
         public decimal Price
@@ -30,6 +32,7 @@ namespace Mini_Project_1.Models
             {
                 if (value <= 0)
                 {
+                    
                     throw new ArgumentException("Qiymət sıfırdan böyük olmalıdır.");
                 }
                 else
@@ -72,7 +75,7 @@ namespace Mini_Project_1.Models
                 _idCounter = maxExistingId + 1;
         }
                       
-        public void PrintInfo() 
+        public override void PrintInfo() 
         {
             Console.WriteLine($"  Məhsulun adı : {Name}");
             Console.WriteLine($"  Qiyməti : {Price}Azn");

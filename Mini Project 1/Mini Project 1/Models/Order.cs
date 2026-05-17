@@ -1,4 +1,5 @@
-﻿using Mini_Project_1.Enums;
+﻿using Mini_Project_1.AbstractClasses;
+using Mini_Project_1.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Mini_Project_1.Models
 {
-    internal class Order
+    internal class Order : BaseEntity
     {
 
         private static int _idCounter = 1;
@@ -54,7 +55,7 @@ namespace Mini_Project_1.Models
             if (maxExistingId >= _idCounter)
                 _idCounter = maxExistingId + 1;
         }
-        public void PrintInfo()
+        public override void PrintInfo()
         {
             Console.WriteLine($"  Sifariş nömrəsi  : {Id}");
             Console.WriteLine($"  Email     : {Email}");

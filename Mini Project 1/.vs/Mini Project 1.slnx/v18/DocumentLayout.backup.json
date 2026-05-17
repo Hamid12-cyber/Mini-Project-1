@@ -3,28 +3,52 @@
   "WorkspaceRootPath": "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7F0E52B6-7442-E22F-AED2-1D676AF3400E}|Mini Project 1\\Mini Project 1.csproj|c:\\users\\asus\\desktop\\mini projecthm\\mini project 1\\mini project 1\\services\\productservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F0E52B6-7442-E22F-AED2-1D676AF3400E}|Mini Project 1\\Mini Project 1.csproj|solutionrelative:mini project 1\\services\\productservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7F0E52B6-7442-E22F-AED2-1D676AF3400E}|Mini Project 1\\Mini Project 1.csproj|c:\\users\\asus\\desktop\\mini projecthm\\mini project 1\\mini project 1\\data\\product.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7F0E52B6-7442-E22F-AED2-1D676AF3400E}|Mini Project 1\\Mini Project 1.csproj|solutionrelative:mini project 1\\data\\product.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7F0E52B6-7442-E22F-AED2-1D676AF3400E}|Mini Project 1\\Mini Project 1.csproj|c:\\users\\asus\\desktop\\mini projecthm\\mini project 1\\mini project 1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F0E52B6-7442-E22F-AED2-1D676AF3400E}|Mini Project 1\\Mini Project 1.csproj|solutionrelative:mini project 1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7F0E52B6-7442-E22F-AED2-1D676AF3400E}|Mini Project 1\\Mini Project 1.csproj|c:\\users\\asus\\desktop\\mini projecthm\\mini project 1\\mini project 1\\services\\productservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F0E52B6-7442-E22F-AED2-1D676AF3400E}|Mini Project 1\\Mini Project 1.csproj|solutionrelative:mini project 1\\services\\productservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7F0E52B6-7442-E22F-AED2-1D676AF3400E}|Mini Project 1\\Mini Project 1.csproj|c:\\users\\asus\\desktop\\mini projecthm\\mini project 1\\mini project 1\\services\\orderproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7F0E52B6-7442-E22F-AED2-1D676AF3400E}|Mini Project 1\\Mini Project 1.csproj|solutionrelative:mini project 1\\services\\orderproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{7F0E52B6-7442-E22F-AED2-1D676AF3400E}|Mini Project 1\\Mini Project 1.csproj|c:\\users\\asus\\desktop\\mini projecthm\\mini project 1\\mini project 1\\repostories\\ordersrepostory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F0E52B6-7442-E22F-AED2-1D676AF3400E}|Mini Project 1\\Mini Project 1.csproj|solutionrelative:mini project 1\\repostories\\ordersrepostory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F0E52B6-7442-E22F-AED2-1D676AF3400E}|Mini Project 1\\Mini Project 1.csproj|c:\\users\\asus\\desktop\\mini projecthm\\mini project 1\\mini project 1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F0E52B6-7442-E22F-AED2-1D676AF3400E}|Mini Project 1\\Mini Project 1.csproj|solutionrelative:mini project 1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7F0E52B6-7442-E22F-AED2-1D676AF3400E}|Mini Project 1\\Mini Project 1.csproj|c:\\users\\asus\\desktop\\mini projecthm\\mini project 1\\mini project 1\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7F0E52B6-7442-E22F-AED2-1D676AF3400E}|Mini Project 1\\Mini Project 1.csproj|solutionrelative:mini project 1\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7F0E52B6-7442-E22F-AED2-1D676AF3400E}|Mini Project 1\\Mini Project 1.csproj|c:\\users\\asus\\desktop\\mini projecthm\\mini project 1\\mini project 1\\data\\product.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{7F0E52B6-7442-E22F-AED2-1D676AF3400E}|Mini Project 1\\Mini Project 1.csproj|solutionrelative:mini project 1\\data\\product.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{7F0E52B6-7442-E22F-AED2-1D676AF3400E}|Mini Project 1\\Mini Project 1.csproj|c:\\users\\asus\\desktop\\mini projecthm\\mini project 1\\mini project 1\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F0E52B6-7442-E22F-AED2-1D676AF3400E}|Mini Project 1\\Mini Project 1.csproj|solutionrelative:mini project 1\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7F0E52B6-7442-E22F-AED2-1D676AF3400E}|Mini Project 1\\Mini Project 1.csproj|c:\\users\\asus\\desktop\\mini projecthm\\mini project 1\\mini project 1\\data\\orders.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{7F0E52B6-7442-E22F-AED2-1D676AF3400E}|Mini Project 1\\Mini Project 1.csproj|solutionrelative:mini project 1\\data\\orders.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{7F0E52B6-7442-E22F-AED2-1D676AF3400E}|Mini Project 1\\Mini Project 1.csproj|c:\\users\\asus\\desktop\\mini projecthm\\mini project 1\\mini project 1\\repostories\\productrepostory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F0E52B6-7442-E22F-AED2-1D676AF3400E}|Mini Project 1\\Mini Project 1.csproj|solutionrelative:mini project 1\\repostories\\productrepostory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F0E52B6-7442-E22F-AED2-1D676AF3400E}|Mini Project 1\\Mini Project 1.csproj|c:\\users\\asus\\desktop\\mini projecthm\\mini project 1\\mini project 1\\minishophm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F0E52B6-7442-E22F-AED2-1D676AF3400E}|Mini Project 1\\Mini Project 1.csproj|solutionrelative:mini project 1\\minishophm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F0E52B6-7442-E22F-AED2-1D676AF3400E}|Mini Project 1\\Mini Project 1.csproj|c:\\users\\asus\\desktop\\mini projecthm\\mini project 1\\mini project 1\\repostories\\repostories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F0E52B6-7442-E22F-AED2-1D676AF3400E}|Mini Project 1\\Mini Project 1.csproj|solutionrelative:mini project 1\\repostories\\repostories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F0E52B6-7442-E22F-AED2-1D676AF3400E}|Mini Project 1\\Mini Project 1.csproj|c:\\users\\asus\\desktop\\mini projecthm\\mini project 1\\mini project 1\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F0E52B6-7442-E22F-AED2-1D676AF3400E}|Mini Project 1\\Mini Project 1.csproj|solutionrelative:mini project 1\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F0E52B6-7442-E22F-AED2-1D676AF3400E}|Mini Project 1\\Mini Project 1.csproj|c:\\users\\asus\\desktop\\mini projecthm\\mini project 1\\mini project 1\\abstractclasses\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F0E52B6-7442-E22F-AED2-1D676AF3400E}|Mini Project 1\\Mini Project 1.csproj|solutionrelative:mini project 1\\abstractclasses\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7F0E52B6-7442-E22F-AED2-1D676AF3400E}|Mini Project 1\\Mini Project 1.csproj|c:\\users\\asus\\desktop\\mini projecthm\\mini project 1\\mini project 1\\mini project 1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -38,21 +62,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Orders.json",
-              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\Data\\Orders.json",
-              "RelativeDocumentMoniker": "Mini Project 1\\Data\\Orders.json",
-              "ToolTip": "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\Data\\Orders.json",
-              "RelativeToolTip": "Mini Project 1\\Data\\Orders.json",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAowEMAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-05-16T09:14:24.605Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
@@ -63,72 +74,163 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "OrderProduct.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\Services\\OrderProduct.cs",
-              "RelativeDocumentMoniker": "Mini Project 1\\Services\\OrderProduct.cs",
-              "ToolTip": "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\Services\\OrderProduct.cs",
-              "RelativeToolTip": "Mini Project 1\\Services\\OrderProduct.cs",
-              "ViewState": "AgIAAJoAAAAAAAAAAAAkwHsAAAANAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "OrderItem.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\Models\\OrderItem.cs",
+              "RelativeDocumentMoniker": "Mini Project 1\\Models\\OrderItem.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\Models\\OrderItem.cs",
+              "RelativeToolTip": "Mini Project 1\\Models\\OrderItem.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-15T21:06:37.651Z",
+              "WhenOpened": "2026-05-17T10:47:48.038Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Product.cs",
               "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\Models\\Product.cs",
               "RelativeDocumentMoniker": "Mini Project 1\\Models\\Product.cs",
               "ToolTip": "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\Models\\Product.cs",
               "RelativeToolTip": "Mini Project 1\\Models\\Product.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAgwEYAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAADIAAAAAAAAAAAAgwAsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-15T09:08:09.976Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Product.json",
-              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\Data\\Product.json",
-              "RelativeDocumentMoniker": "Mini Project 1\\Data\\Product.json",
-              "ToolTip": "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\Data\\Product.json",
-              "RelativeToolTip": "Mini Project 1\\Data\\Product.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAC7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-05-15T08:09:25.239Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ProductServices.cs",
               "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\Services\\ProductServices.cs",
               "RelativeDocumentMoniker": "Mini Project 1\\Services\\ProductServices.cs",
               "ToolTip": "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\Services\\ProductServices.cs",
               "RelativeToolTip": "Mini Project 1\\Services\\ProductServices.cs",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAowHQAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-15T07:59:34.329Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "Product.json",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\Data\\Product.json",
+              "RelativeDocumentMoniker": "Mini Project 1\\Data\\Product.json",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\Data\\Product.json",
+              "RelativeToolTip": "Mini Project 1\\Data\\Product.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-15T08:09:25.239Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\Program.cs",
               "RelativeDocumentMoniker": "Mini Project 1\\Program.cs",
               "ToolTip": "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\Program.cs",
               "RelativeToolTip": "Mini Project 1\\Program.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAAAC0AAABNAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-15T07:49:25.043Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
+              "Title": "OrdersRepostory.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\Repostories\\OrdersRepostory.cs",
+              "RelativeDocumentMoniker": "Mini Project 1\\Repostories\\OrdersRepostory.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\Repostories\\OrdersRepostory.cs",
+              "RelativeToolTip": "Mini Project 1\\Repostories\\OrdersRepostory.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-17T10:27:57.377Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrderProduct.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\Services\\OrderProduct.cs",
+              "RelativeDocumentMoniker": "Mini Project 1\\Services\\OrderProduct.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\Services\\OrderProduct.cs",
+              "RelativeToolTip": "Mini Project 1\\Services\\OrderProduct.cs",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAcwA0AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-15T21:06:37.651Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ProductRepostory.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\Repostories\\ProductRepostory.cs",
+              "RelativeDocumentMoniker": "Mini Project 1\\Repostories\\ProductRepostory.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\Repostories\\ProductRepostory.cs",
+              "RelativeToolTip": "Mini Project 1\\Repostories\\ProductRepostory.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBEAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-17T10:27:20.405Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Minishophm.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\Minishophm.cs",
+              "RelativeDocumentMoniker": "Mini Project 1\\Minishophm.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\Minishophm.cs",
+              "RelativeToolTip": "Mini Project 1\\Minishophm.cs",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAAAB8AAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-16T16:37:59.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Repostories.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\Repostories\\Repostories.cs",
+              "RelativeDocumentMoniker": "Mini Project 1\\Repostories\\Repostories.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\Repostories\\Repostories.cs",
+              "RelativeToolTip": "Mini Project 1\\Repostories\\Repostories.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAgwCEAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-17T10:28:40.974Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "Mini Project 1\\Models\\Order.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\Models\\Order.cs",
+              "RelativeToolTip": "Mini Project 1\\Models\\Order.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBAAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-17T11:13:30.852Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "BaseEntity.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\AbstractClasses\\BaseEntity.cs",
+              "RelativeDocumentMoniker": "Mini Project 1\\AbstractClasses\\BaseEntity.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\AbstractClasses\\BaseEntity.cs",
+              "RelativeToolTip": "Mini Project 1\\AbstractClasses\\BaseEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-17T11:06:19.286Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Mini Project 1.csproj",
               "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\Mini projecthm\\Mini Project 1\\Mini Project 1\\Mini Project 1.csproj",
               "RelativeDocumentMoniker": "Mini Project 1\\Mini Project 1.csproj",

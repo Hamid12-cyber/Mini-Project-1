@@ -1,4 +1,5 @@
 ﻿using Mini_Project_1.Models;
+using Mini_Project_1.Repostories;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -10,33 +11,12 @@ namespace Mini_Project_1.Services
 {
     internal class ProductServices
     {
-        private static readonly string _path = @"C:\Users\Asus\Desktop\Mini projecthm\Mini Project 1\Mini Project 1\Data\Product.json" ;
+        internal ProductRepostory ProductRepo { get; set; } = new();
+        public object OrderRepo { get; internal set; }
 
-        public void Serialize(List <Product> items) 
-        {
-            string json = JsonConvert.SerializeObject(items) ;
-            using (StreamWriter sw = new StreamWriter(_path)) 
-            {
-                sw.Write(json);
-            }
-
-        }
-        public List<Product> Deserialize() 
-        {
-            string json;
-            using (StreamReader sr = new(_path)) 
-            {
-                json = sr.ReadToEnd();
-            }
-            List<Product> list = JsonConvert.DeserializeObject<List<Product>>(json);
-            if (list.Count > 0)
-                Product.SyncCounter(list.Max(p => p.Id));
-            return list ?? new List<Product>();
-            
-        }
         public void CreateProduct(string name, decimal price, int stock)
         {
-            List<Product> products = Deserialize();
+            List<Product> products = ProductRepo.Deserialize();
             foreach (Product p in products)
             {
                 if (p.Name.ToLower () == name.Trim().ToLower() )
@@ -51,12 +31,12 @@ namespace Mini_Project_1.Services
             }
             Product newProduct = new Product(name, price, stock);
             products.Add(newProduct);
-            Serialize(products);
+            ProductRepo.Serialize(products);
             Console.WriteLine("Məhsul uğurla yaradıldı və fayla yazıldı.");
         }
         public void DeleteProduct(int id)
         {
-           List<Product> products = Deserialize();     
+           List<Product> products = ProductRepo.Deserialize();     
            
             Product productToDelete = null;
             
@@ -72,7 +52,7 @@ namespace Mini_Project_1.Services
             if (productToDelete != null)
             {
                 products.Remove(productToDelete); 
-                Serialize(products);              
+                ProductRepo.Serialize(products);              
                 Console.WriteLine($" {id} nömrəli məhsul silindi.");
             }
             else
@@ -82,7 +62,7 @@ namespace Mini_Project_1.Services
         }
         public void GetProductById(int id)
         {           
-            List<Product> products = Deserialize();
+            List<Product> products = ProductRepo.Deserialize();
                         
             Product? foundProduct = products.Find(p => p.Id == id);
             
@@ -98,7 +78,7 @@ namespace Mini_Project_1.Services
         }
         public void ShowAllProducts() 
         {
-            List <Product> products = Deserialize();
+            List <Product> products = ProductRepo.Deserialize();
             if (products.Count == 0) 
             {
                 Console.WriteLine($"Hazırda məhsul yoxdur");
@@ -118,7 +98,7 @@ namespace Mini_Project_1.Services
             {
                 Console.WriteLine($"Daxil olunan stock 0 vəya mənfi ola bilməz");
             }
-            List<Product>products = Deserialize();
+            List<Product>products = ProductRepo.Deserialize();
             
             Product? productToUpdate = products.Find(p=>p.Id == id);
 
@@ -128,7 +108,7 @@ namespace Mini_Project_1.Services
                 return;
             }
             productToUpdate.Stock += amount;
-            Serialize(products);
+            ProductRepo.Serialize(products);
             Console.WriteLine($"Uğurlu! '{productToUpdate.Name}' məhsulunun yeni stoku: {productToUpdate.Stock}");
 
         }

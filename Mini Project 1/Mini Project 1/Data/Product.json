@@ -1,1 +1,20 @@
-[{"Name":"Has","Price":12.0,"Stock":1,"Id":2},{"Name":"Zaz","Price":503.0,"Stock":1,"Id":3},{"Name":"Jas","Price":567.0,"Stock":2,"Id":4},{"Name":"Byd","Price":23000.0,"Stock":42,"Id":5}]
+[
+  {
+    "Name": "Toyota",
+    "Price": 32000.0,
+    "Stock": 43,
+    "Id": 1
+  },
+  {
+    "Name": "Lexus",
+    "Price": 90000.0,
+    "Stock": 22,
+    "Id": 2
+  },
+  {
+    "Name": "Mazda",
+    "Price": 30000.0,
+    "Stock": 115,
+    "Id": 3
+  }
+]

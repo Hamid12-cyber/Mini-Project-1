@@ -1,5 +1,6 @@
 ﻿using Mini_Project_1.Enums;
 using Mini_Project_1.Models;
+using Mini_Project_1.Repostories;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -11,44 +12,8 @@ using System.Threading.Tasks;
 namespace Mini_Project_1.Services
 {
     internal class OrderProduct
-    {
-        private static readonly string _path = @"C:\Users\Asus\Desktop\Mini projecthm\Mini Project 1\Mini Project 1\Data\Orders.json";
-
-        protected void Serialize(List<Order> items)
-        {
-            var settings = new JsonSerializerSettings
-            {
-                Formatting = Formatting.Indented,
-                Converters = new List<JsonConverter> { new Newtonsoft.Json.Converters.StringEnumConverter() }
-            }; 
-            Directory.CreateDirectory(Path.GetDirectoryName(_path));
-            string json = JsonConvert.SerializeObject(items, settings);
-            using (StreamWriter sw = new StreamWriter(_path))
-            {
-                sw.Write(json);
-            }
-        }
-        protected List<Order> Deserialize()
-        {
-            Directory.CreateDirectory(Path.GetDirectoryName(_path));
-
-            if (!File.Exists(_path))
-                return new List<Order>();
-
-            string json;
-            using (StreamReader sr = new(_path))
-            {
-                json = sr.ReadToEnd();
-            }
-
-            if (string.IsNullOrWhiteSpace(json))
-                return new List<Order>();
-
-            List<Order> list = JsonConvert.DeserializeObject<List<Order>>(json);
-            if (list != null && list.Count > 0)
-                Order.SyncCounter(list.Max(p => p.Id));
-            return list ?? new List<Order>();
-        }
+    {          
+        internal OrdersRepostory OrderRepo { get; set; } = new();
         public void Orderproduct(ProductServices productServices)
         {
             Console.Write("Email: ");
@@ -60,7 +25,7 @@ namespace Mini_Project_1.Services
             }
             List<OrderItem> orderitems = new List<OrderItem>();
 
-            List<Product> allProducts = productServices.Deserialize();
+            List<Product> allProducts = productServices.ProductRepo.Deserialize();
 
             while (true)
             {
@@ -106,7 +71,7 @@ namespace Mini_Project_1.Services
 
                 orderitems.Add(new OrderItem(product, count));
                 product.Stock -= count;
-                productServices.Serialize(allProducts);
+                productServices.ProductRepo.Serialize(allProducts);
 
                 Console.WriteLine($"✓ '{product.Name}' x{count} səbətə əlavə edildi.");
 
@@ -122,16 +87,16 @@ namespace Mini_Project_1.Services
                 Console.WriteLine("Heç məhsul seçilmədi, sifariş ləğv edildi.");
                 return;
             }                  
-            List<Order> orders = Deserialize();
+            List<Order> orders = OrderRepo.Deserialize();
             Order order = new Order(email, orderitems);
             orders.Add(order);
-            Serialize(orders);
+            OrderRepo.Serialize(orders);
 
             Console.WriteLine($"\n✓ Sifariş yaradıldı! Cəmi: {order.Total} Azn");
         }
         public void ShowAllOrders()
         {
-            List<Order> orders = Deserialize();
+            List<Order> orders = OrderRepo.Deserialize();
 
             if (orders.Count == 0)
             {
@@ -155,7 +120,7 @@ namespace Mini_Project_1.Services
         }
         public void ChangeOrderStatus()
         {           
-            List<Order> orders = Deserialize();
+            List<Order> orders = OrderRepo.Deserialize();
             if (orders.Count == 0)
             {
                 Console.WriteLine("\nSistemdə heç bir sifariş yoxdur.");
@@ -198,7 +163,7 @@ namespace Mini_Project_1.Services
                     Console.WriteLine("Yanlış seçim etdiniz! Sifarişin statusu dəyişdirilmədi.");
                     return;
             }
-            Serialize(orders);
+            OrderRepo.Serialize(orders);
             Console.WriteLine($"\n✓ {orderId} nömrəli sifarişin statusu uğurla '{order.Status}' olaraq yeniləndi.");
         }
     

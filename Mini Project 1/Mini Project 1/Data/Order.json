@@ -1,0 +1,44 @@
+[
+  {
+    "Id": 1,
+    "Items": [
+      {
+        "Id": "00000000-0000-0000-0000-000000000000",
+        "Product": {
+          "Name": "Lexus",
+          "Price": 90000.0,
+          "Stock": 25,
+          "Id": 2
+        },
+        "Count": 3,
+        "Price": 90000.0,
+        "SubTotal": 270000.0
+      }
+    ],
+    "Total": 270000.0,
+    "Email": "hamidim@code.edu.az",
+    "Status": "Pending",
+    "OrderedAt": "2026-05-17T14:48:10.4202866+03:00"
+  },
+  {
+    "Id": 2,
+    "Items": [
+      {
+        "Id": "4a0b941e-d0bb-4ade-ab61-b06e6c15586d",
+        "Product": {
+          "Name": "Lexus",
+          "Price": 90000.0,
+          "Stock": 22,
+          "Id": 2
+        },
+        "Count": 3,
+        "Price": 90000.0,
+        "SubTotal": 270000.0
+      }
+    ],
+    "Total": 270000.0,
+    "Email": "hamidim@code.edu.az",
+    "Status": "Pending",
+    "OrderedAt": "2026-05-17T14:49:37.7239965+03:00"
+  }
+]

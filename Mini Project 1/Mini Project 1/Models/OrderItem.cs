@@ -7,11 +7,9 @@ using System.Threading.Tasks;
 namespace Mini_Project_1.Models
 {
     internal class OrderItem
-    {
-
-        private static int _idCounter = 1;
-               
-        public int Id { get; set; }
+    {           
+             
+        public Guid Id { get;  }
 
         public Product Product { get; set; }
 
@@ -24,15 +22,11 @@ namespace Mini_Project_1.Models
         public OrderItem() { }
         public OrderItem(Product product, int count)
         {
-            Id = _idCounter++;
-            Product= product;
+            Id = Guid.NewGuid();
+            Product = product;
             Count = count;
             Price = product.Price; 
         }
-        public static void SyncCounter(int maxExistingId)
-        {
-            if (maxExistingId >= _idCounter)
-                _idCounter = maxExistingId + 1;
-        } 
+       
     }
 }
