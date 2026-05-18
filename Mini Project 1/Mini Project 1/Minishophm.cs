@@ -1,15 +1,10 @@
 ﻿using Mini_Project_1.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mini_Project_1
 {
     internal class Minishophm
     {
-        public void Run() 
+        public void Run()
         {
             ProductServices productServices = new ProductServices();
             OrderProduct orderProduct = new OrderProduct();
@@ -18,54 +13,59 @@ namespace Mini_Project_1
 
             while (isRunning)
             {
-                Console.WriteLine("\n--- MENU ---");
-                Console.Write("Secim edin:");
-                Console.WriteLine($"\n1. Create Product\n2. Delete Product\n3. Get Product By Id\n4. Show All Product\n5. Refill Product\n6. Order Product\n7. Show All Orders\n8.Change Order Status");
-                Console.WriteLine("0. Exit");
+                Console.WriteLine("\n========== MENU ==========");
+                Console.WriteLine("  1. Create Product");
+                Console.WriteLine("  2. Delete Product");
+                Console.WriteLine("  3. Get Product By Id");
+                Console.WriteLine("  4. Show All Products");
+                Console.WriteLine("  5. Refill Product");
+                Console.WriteLine("  6. Order Product");
+                Console.WriteLine("  7. Show All Orders");
+                Console.WriteLine("  8. Change Order Status");
+                Console.WriteLine("  9. Show Orders By Email");
+                Console.WriteLine("  10. Cancel Order");
+                Console.WriteLine("  0. Exit");
+                Console.WriteLine("===========================");
+                Console.Write("Seçim edin: ");
 
                 string choice = Console.ReadLine();
 
                 switch (choice)
                 {
                     case "1":
-                        Console.Clear();                        
-                        Console.Write("Ad: "); string name = Console.ReadLine();                        
-                        Console.Write("Qiymet: "); decimal price = decimal.Parse(Console.ReadLine());
+                        Console.Clear();
+                        Console.Write("Ad: "); string name = Console.ReadLine();
+                        Console.Write("Qiymət: "); decimal price = decimal.Parse(Console.ReadLine());
                         Console.Write("Stok: "); int stock = int.Parse(Console.ReadLine());
-                        productServices .CreateProduct(name, price, stock);
+                        productServices.CreateProduct(name, price, stock);
                         break;
 
                     case "2":
                         Console.Clear();
-                        Console.Write("Silinecek ID: ");
+                        Console.Write("Silinəcək ID: ");
                         if (int.TryParse(Console.ReadLine(), out int deleteId))
-                        {
                             productServices.DeleteProduct(deleteId);
-                        }
                         else
-                        {
                             Console.WriteLine("Zəhmət olmasa düzgün ID daxil edin.");
-                        }
                         break;
+
                     case "3":
                         Console.Clear();
-                        Console.Write("Axtarilacaq ID: ");
+                        Console.Write("Axtarılacaq ID: ");
                         if (int.TryParse(Console.ReadLine(), out int searchId))
-                        {
                             productServices.GetProductById(searchId);
-                        }
                         else
-                        {
                             Console.WriteLine("Zəhmət olmasa düzgün ID daxil edin.");
-                        }
                         break;
+
                     case "4":
-                        Console.Clear(); 
+                        Console.Clear();
                         productServices.ShowAllProducts();
                         break;
+
                     case "5":
                         Console.Clear();
-                        Console.WriteLine("\n--- Məhsulun Stokunu Artırın---");
+                        Console.WriteLine("\n--- Məhsulun Stokunu Artırın ---");
                         Console.Write("Məhsulun ID-sini daxil edin: ");
                         if (!int.TryParse(Console.ReadLine(), out int id))
                         {
@@ -80,34 +80,48 @@ namespace Mini_Project_1
                         }
                         productServices.RefillProduct(id, amount);
                         break;
+
                     case "6":
                         Console.Clear();
                         Console.WriteLine("\n--- Yeni Sifariş ---");
                         orderProduct.Orderproduct(productServices);
                         break;
+
                     case "7":
                         Console.Clear();
                         Console.WriteLine("\n================ BÜTÜN SİFARİŞLƏR ================");
                         orderProduct.ShowAllOrders();
                         break;
+
                     case "8":
                         Console.Clear();
                         orderProduct.ChangeOrderStatus();
                         break;
+
+                    case "9":
+                        Console.Clear();
+                        Console.WriteLine("\n--- Müştəri Sifariş Tarixçəsi ---");
+                        orderProduct.ShowOrdersByEmail();
+                        break;
+
+                    case "10":
+                        Console.Clear();
+                        Console.WriteLine("\n--- Sifarişi Ləğv Et ---");
+                        orderProduct.CancelOrder(productServices);
+                        break;
+
                     case "0":
                         Console.Clear();
                         isRunning = false;
-                        Console.WriteLine("Proqramdan cixildi.");
+                        Console.WriteLine("Proqramdan çıxıldı.");
                         break;
 
                     default:
                         Console.Clear();
-                        Console.WriteLine("Yanlis secim! Yeniden cehd edin.");
+                        Console.WriteLine("Yanlış seçim! Yenidən cəhd edin.");
                         break;
-
                 }
             }
         }
-
     }
 }

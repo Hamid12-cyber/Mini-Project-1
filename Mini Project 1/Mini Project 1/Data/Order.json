@@ -10,14 +10,15 @@
           "Stock": 25,
           "Id": 2
         },
-        "DeliveryType": null,
-        "DeliveryFee": 0.0,
         "Count": 3,
         "Price": 90000.0,
         "SubTotal": 270000.0
       }
     ],
     "Total": 270000.0,
+    "DiscountPercent": 10.0,
+    "Discount": 27000.0,
+    "FinalTotal": 243000.0,
     "Email": "hamidim@code.edu.az",
     "DeliveryType": null,
     "DeliveryFee": 0.0,
@@ -35,14 +36,15 @@
           "Stock": 22,
           "Id": 2
         },
-        "DeliveryType": null,
-        "DeliveryFee": 0.0,
         "Count": 3,
         "Price": 90000.0,
         "SubTotal": 270000.0
       }
     ],
     "Total": 270000.0,
+    "DiscountPercent": 10.0,
+    "Discount": 27000.0,
+    "FinalTotal": 243000.0,
     "Email": "hamidim@code.edu.az",
     "DeliveryType": null,
     "DeliveryFee": 0.0,
@@ -60,8 +62,6 @@
           "Stock": 38,
           "Id": 1
         },
-        "DeliveryType": null,
-        "DeliveryFee": 0.0,
         "Count": 2,
         "Price": 32000.0,
         "SubTotal": 64000.0
@@ -74,14 +74,15 @@
           "Stock": 38,
           "Id": 1
         },
-        "DeliveryType": null,
-        "DeliveryFee": 0.0,
         "Count": 3,
         "Price": 32000.0,
         "SubTotal": 96000.0
       }
     ],
     "Total": 160000.0,
+    "DiscountPercent": 10.0,
+    "Discount": 16000.0,
+    "FinalTotal": 144000.0,
     "Email": "Lamda@code",
     "DeliveryType": null,
     "DeliveryFee": 0.0,
@@ -99,14 +100,15 @@
           "Stock": 90,
           "Id": 3
         },
-        "DeliveryType": null,
-        "DeliveryFee": 0.0,
         "Count": 13,
         "Price": 30000.0,
         "SubTotal": 390000.0
       }
     ],
     "Total": 390005.0,
+    "DiscountPercent": 10.0,
+    "Discount": 39000.0,
+    "FinalTotal": 351005.0,
     "Email": "hamido@",
     "DeliveryType": "Kuryer ilə",
     "DeliveryFee": 5.0,
@@ -124,14 +126,15 @@
           "Stock": 21,
           "Id": 2
         },
-        "DeliveryType": null,
-        "DeliveryFee": 0.0,
         "Count": 1,
         "Price": 90000.0,
         "SubTotal": 90000.0
       }
     ],
     "Total": 90000.0,
+    "DiscountPercent": 10.0,
+    "Discount": 9000.0,
+    "FinalTotal": 81000.0,
     "Email": "hamid@fan",
     "DeliveryType": "Özüm götürəcəm",
     "DeliveryFee": 0.0,
@@ -149,14 +152,15 @@
           "Stock": 20,
           "Id": 2
         },
-        "DeliveryType": null,
-        "DeliveryFee": 0.0,
         "Count": 1,
         "Price": 90000.0,
         "SubTotal": 90000.0
       }
     ],
     "Total": 90000.0,
+    "DiscountPercent": 10.0,
+    "Discount": 9000.0,
+    "FinalTotal": 81000.0,
     "Email": "killer71@mail.ru",
     "DeliveryType": "Özüm götürəcəm",
     "DeliveryFee": 0.0,
@@ -174,14 +178,15 @@
           "Stock": 18,
           "Id": 2
         },
-        "DeliveryType": null,
-        "DeliveryFee": 0.0,
         "Count": 2,
         "Price": 90000.0,
         "SubTotal": 180000.0
       }
     ],
     "Total": 180000.0,
+    "DiscountPercent": 10.0,
+    "Discount": 18000.0,
+    "FinalTotal": 162000.0,
     "Email": "recep@ive",
     "DeliveryType": "Özüm götürəcəm",
     "DeliveryFee": 0.0,
@@ -199,14 +204,15 @@
           "Stock": 89,
           "Id": 3
         },
-        "DeliveryType": null,
-        "DeliveryFee": 0.0,
         "Count": 1,
         "Price": 30000.0,
         "SubTotal": 30000.0
       }
     ],
     "Total": 30000.0,
+    "DiscountPercent": 10.0,
+    "Discount": 3000.0,
+    "FinalTotal": 27000.0,
     "Email": "tamada@fi",
     "DeliveryType": "Özüm götürəcəm",
     "DeliveryFee": 0.0,
@@ -224,8 +230,6 @@
           "Stock": 16,
           "Id": 2
         },
-        "DeliveryType": null,
-        "DeliveryFee": 0.0,
         "Count": 2,
         "Price": 90000.0,
         "SubTotal": 180000.0
@@ -238,14 +242,15 @@
           "Stock": 88,
           "Id": 3
         },
-        "DeliveryType": null,
-        "DeliveryFee": 0.0,
         "Count": 1,
         "Price": 30000.0,
         "SubTotal": 30000.0
       }
     ],
     "Total": 210000.0,
+    "DiscountPercent": 10.0,
+    "Discount": 21000.0,
+    "FinalTotal": 189000.0,
     "Email": "maykl@may",
     "DeliveryType": "Özüm götürəcəm",
     "DeliveryFee": 0.0,
@@ -256,25 +261,104 @@
     "Id": 10,
     "Items": [
       {
-        "Id": "8bc49aee-1ec4-47a9-9860-c949f40d1bb2",
+        "Id": "00000000-0000-0000-0000-000000000000",
         "Product": {
           "Name": "Lexus",
           "Price": 90000.0,
           "Stock": 15,
           "Id": 2
         },
-        "DeliveryType": null,
-        "DeliveryFee": 0.0,
         "Count": 1,
         "Price": 90000.0,
         "SubTotal": 90000.0
       }
     ],
     "Total": 90005.0,
+    "DiscountPercent": 10.0,
+    "Discount": 9000.0,
+    "FinalTotal": 81005.0,
     "Email": "naum@ma",
     "DeliveryType": "Kuryer ilə",
     "DeliveryFee": 5.0,
     "Status": "Pending",
     "OrderedAt": "2026-05-17T20:24:56.806987+03:00"
+  },
+  {
+    "Id": 11,
+    "Items": [
+      {
+        "Id": "00000000-0000-0000-0000-000000000000",
+        "Product": {
+          "Name": "Mazda",
+          "Price": 30000.0,
+          "Stock": 84,
+          "Id": 3
+        },
+        "Count": 2,
+        "Price": 30000.0,
+        "SubTotal": 60000.0
+      }
+    ],
+    "Total": 60005.0,
+    "DiscountPercent": 10.0,
+    "Discount": 6000.0,
+    "FinalTotal": 54005.0,
+    "Email": "hamid@mail.ru",
+    "DeliveryType": "Kuryer ilə",
+    "DeliveryFee": 5.0,
+    "Status": "Cancelled",
+    "OrderedAt": "2026-05-18T12:37:12.638637+03:00"
+  },
+  {
+    "Id": 12,
+    "Items": [
+      {
+        "Id": "00000000-0000-0000-0000-000000000000",
+        "Product": {
+          "Name": "Mazda",
+          "Price": 30000.0,
+          "Stock": 82,
+          "Id": 3
+        },
+        "Count": 2,
+        "Price": 30000.0,
+        "SubTotal": 60000.0
+      }
+    ],
+    "Total": 60005.0,
+    "DiscountPercent": 10.0,
+    "Discount": 6000.0,
+    "FinalTotal": 54005.0,
+    "Email": "yaz@d",
+    "DeliveryType": "Kuryer ilə",
+    "DeliveryFee": 5.0,
+    "Status": "Pending",
+    "OrderedAt": "2026-05-18T12:48:01.8986298+03:00"
+  },
+  {
+    "Id": 13,
+    "Items": [
+      {
+        "Id": "00000000-0000-0000-0000-000000000000",
+        "Product": {
+          "Name": "Mazda",
+          "Price": 30000.0,
+          "Stock": 82,
+          "Id": 3
+        },
+        "Count": 2,
+        "Price": 30000.0,
+        "SubTotal": 60000.0
+      }
+    ],
+    "Total": 60005.0,
+    "DiscountPercent": 10.0,
+    "Discount": 6000.0,
+    "FinalTotal": 54005.0,
+    "Email": "kam@",
+    "DeliveryType": "Kuryer ilə",
+    "DeliveryFee": 5.0,
+    "Status": "Cancelled",
+    "OrderedAt": "2026-05-18T12:51:36.7548568+03:00"
   }
 ]

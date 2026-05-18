@@ -12,8 +12,6 @@ namespace Mini_Project_1.Models
         public Guid Id { get;  }
 
         public Product Product { get; set; }
-        public string DeliveryType { get; set; }
-        public decimal DeliveryFee { get; set; }
         public int Count { get; set; }
              
         public decimal Price { get; set; }
