@@ -1,4 +1,5 @@
-﻿using Mini_Project_1.Enums;
+﻿using Mini_Project_1.Animations;
+using Mini_Project_1.Enums;
 using Mini_Project_1.Models;
 using Mini_Project_1.Repostories;
 
@@ -8,13 +9,28 @@ namespace Mini_Project_1.Services
     {
         internal OrdersRepostory OrderRepo { get; set; } = new();
 
+        private static void Print(string text, ConsoleColor color = ConsoleColor.White)
+        {
+            Console.ForegroundColor = color;
+            Console.WriteLine(text);
+            Console.ResetColor();
+        }
+
+        private static void Write(string text, ConsoleColor color = ConsoleColor.White)
+        {
+            Console.ForegroundColor = color;
+            Console.Write(text);
+            Console.ResetColor();
+        }
+
         public void Orderproduct(ProductServices productServices)
         {
-            Console.Write("Email: ");
+            Write("\n  Email: ", ConsoleColor.Yellow);
             string email = Console.ReadLine();
+
             if (string.IsNullOrEmpty(email) || !email.Contains("@"))
             {
-                Console.WriteLine("Email formatı düzgün deyil, @ mütləq olmalıdır.");
+                Print("  ✗ Email formatı düzgün deyil, @ mütləq olmalıdır.", ConsoleColor.Red);
                 return;
             }
 
@@ -23,11 +39,11 @@ namespace Mini_Project_1.Services
 
             while (true)
             {
-                Console.Write("\nAlmaq istədiyiniz məhsulun ID-sini daxil edin (çıxmaq üçün 0): ");
+                Write("\n  Məhsulun ID-sini daxil edin (çıxmaq üçün 0): ", ConsoleColor.Yellow);
 
                 if (!int.TryParse(Console.ReadLine(), out int productId) || productId < 0)
                 {
-                    Console.WriteLine("Düzgün rəqəm daxil edin.");
+                    Print("  ✗ Düzgün rəqəm daxil edin.", ConsoleColor.Red);
                     continue;
                 }
 
@@ -36,22 +52,22 @@ namespace Mini_Project_1.Services
                 Product product = allProducts.Find(p => p.Id == productId);
                 if (product == null)
                 {
-                    Console.WriteLine("Məhsul tapılmadı!");
+                    Print("  ✗ Məhsul tapılmadı!", ConsoleColor.Red);
                     continue;
                 }
 
-                Console.WriteLine($"  {product.Name} | Stok: {product.Stock} | Qiymət: {product.Price} AZN");
-                Console.Write("Neçə ədəd almaq istəyirsiniz: ");
+                Print($"  {product.Name} | Stok: {product.Stock} | Qiymət: {product.Price} AZN", ConsoleColor.White);
+                Write("  Neçə ədəd almaq istəyirsiniz: ", ConsoleColor.Yellow);
 
                 if (!int.TryParse(Console.ReadLine(), out int count) || count <= 0)
                 {
-                    Console.WriteLine("Düzgün miqdar daxil edin.");
+                    Print("  ✗ Düzgün miqdar daxil edin.", ConsoleColor.Red);
                     continue;
                 }
 
                 if (count > product.Stock)
                 {
-                    Console.WriteLine($"Yalnız {product.Stock} ədəd mövcuddur.");
+                    Print($"  ✗ Yalnız {product.Stock} ədəd mövcuddur.", ConsoleColor.Red);
                     continue;
                 }
 
@@ -59,38 +75,36 @@ namespace Mini_Project_1.Services
                 product.Stock -= count;
                 productServices.ProductRepo.Serialize(allProducts);
 
-                Console.WriteLine($"✓ '{product.Name}' x{count} səbətə əlavə edildi.");
-                Console.Write("Başqa məhsul əlavə etmək istəyirsiniz? (b - Bəli / x - Xeyr): ");
-                string choice = Console.ReadLine()?.Trim().ToLower();
-                if (choice != "b" && choice != "bəli") break;
+                Print($"  ✓ '{product.Name}' x{count} səbətə əlavə edildi.", ConsoleColor.Yellow);
+                Write("  Başqa məhsul əlavə etmək istəyirsiniz? (b / x): ", ConsoleColor.Yellow);
+                string ch = Console.ReadLine()?.Trim().ToLower();
+                if (ch != "b" && ch != "bəli") break;
             }
 
             Console.Clear();
 
             if (orderitems.Count == 0)
             {
-                Console.WriteLine("Heç məhsul seçilmədi, sifariş ləğv edildi.");
+                Print("  Heç məhsul seçilmədi, sifariş ləğv edildi.", ConsoleColor.Yellow);
                 return;
             }
 
             decimal deliveryFee = 0;
             string deliveryType = "";
-            string address = "";
 
             while (true)
             {
-                Console.WriteLine("\nÇatdırılma növünü seçin:");
-                Console.WriteLine("  1 - Özüm götürəcəm (Pulsuz)");
-                Console.WriteLine("  2 - Kuryer ilə (5 AZN)");
-                Console.WriteLine("  0 - Sifarişi ləğv et");
-                Console.Write("Seçiminiz: ");
+                Print("\n  Çatdırılma növünü seçin:", ConsoleColor.Yellow);
+                Print("  1 - Özüm götürəcəm (Pulsuz)", ConsoleColor.White);
+                Print("  2 - Kuryer ilə (5 AZN)", ConsoleColor.White);
+                Print("  0 - Sifarişi ləğv et", ConsoleColor.DarkRed);
+                Write("  Seçiminiz: ", ConsoleColor.Yellow);
 
                 string deliveryChoice = Console.ReadLine()?.Trim();
 
                 if (deliveryChoice == "0")
                 {
-                    Console.WriteLine("Sifariş ləğv edildi.");
-                  
+                    Print("  Sifariş ləğv edildi.", ConsoleColor.Red);
                     foreach (var item in orderitems)
                     {
                         var p = allProducts.Find(x => x.Id == item.Product.Id);
@@ -108,11 +122,11 @@ namespace Mini_Project_1.Services
                 else if (deliveryChoice == "2")
                 {
                     Console.Clear();
-                    Console.Write("Çatdırılma ünvanını daxil edin: ");
-                    address = Console.ReadLine();
+                    Write("  Çatdırılma ünvanını daxil edin: ", ConsoleColor.Yellow);
+                    string address = Console.ReadLine();
                     if (string.IsNullOrWhiteSpace(address))
                     {
-                        Console.WriteLine("Ünvan boş ola bilməz, yenidən daxil edin.");
+                        Print("  ✗ Ünvan boş ola bilməz.", ConsoleColor.Red);
                         continue;
                     }
                     deliveryType = "Kuryer ilə";
@@ -121,8 +135,7 @@ namespace Mini_Project_1.Services
                 }
                 else
                 {
-                    Console.Clear();
-                    Console.WriteLine("Yanlış seçim, yenidən cəhd edin.");
+                    Print("  ✗ Yanlış seçim.", ConsoleColor.Red);
                 }
             }
 
@@ -133,18 +146,18 @@ namespace Mini_Project_1.Services
 
             order.PrintReceipt();
 
-           
             if (order.DiscountPercent > 0)
-                Console.WriteLine($"🎉 {order.DiscountPercent}% endirim qazandınız! Qənaət: {order.Discount} AZN");
+                Print($"\n  🎉 {order.DiscountPercent}% endirim qazandınız! Qənaət: {order.Discount} AZN", ConsoleColor.Yellow);
         }
+
         public void ShowOrdersByEmail()
         {
-            Console.Write("Email daxil edin: ");
+            Write("  Email daxil edin: ", ConsoleColor.Yellow);
             string email = Console.ReadLine()?.Trim().ToLower();
 
             if (string.IsNullOrEmpty(email) || !email.Contains("@"))
             {
-                Console.WriteLine("Düzgün email daxil edin.");
+                Print("  ✗ Düzgün email daxil edin.", ConsoleColor.Red);
                 return;
             }
 
@@ -156,56 +169,55 @@ namespace Mini_Project_1.Services
 
             if (userOrders.Count == 0)
             {
-                Console.WriteLine($"\n'{email}' emaili ilə heç bir sifariş tapılmadı.");
+                Print($"\n  '{email}' emaili ilə heç bir sifariş tapılmadı.", ConsoleColor.Yellow);
                 return;
             }
 
-            Console.WriteLine($"\n========= {email} - SİFARİŞ TARİXÇƏSİ =========");
-            Console.WriteLine($"Ümumi sifariş sayı: {userOrders.Count}\n");
+            Print($"\n  ═══ {email} — SİFARİŞ TARİXÇƏSİ ═══", ConsoleColor.DarkRed);
+            Print($"  Ümumi sifariş sayı: {userOrders.Count}\n", ConsoleColor.Yellow);
 
             foreach (var o in userOrders)
             {
-                string discountInfo = o.DiscountPercent > 0
-                    ? $" (Endirim: -{o.Discount} AZN)"
-                    : "";
-                Console.WriteLine($"  #{o.Id}  [{o.Status}]  {o.OrderedAt:dd.MM.yyyy}  →  {o.FinalTotal} AZN{discountInfo}");
+                string disc = o.DiscountPercent > 0 ? $" (Endirim: -{o.Discount} AZN)" : "";
+                Print($"  #{o.Id}  [{o.Status}]  {o.OrderedAt:dd.MM.yyyy}  →  {o.FinalTotal} AZN{disc}", ConsoleColor.White);
             }
 
             decimal totalSpent = userOrders
                 .Where(o => o.Status != OrderStatus.Cancelled)
                 .Sum(o => o.FinalTotal);
-            Console.WriteLine($"\n  Ümumi xərclənən: {totalSpent} AZN");
-            Console.WriteLine("==============================================");
+
+            Print($"\n  Ümumi xərclənən: {totalSpent} AZN", ConsoleColor.Yellow);
+            Print("  ══════════════════════════════════════", ConsoleColor.DarkRed);
         }
+
         public void CancelOrder(ProductServices productServices)
         {
             List<Order> orders = OrderRepo.Deserialize();
 
             if (orders.Count == 0)
             {
-                Console.WriteLine("\nSistemdə heç bir sifariş yoxdur.");
+                Print("\n  Sistemdə heç bir sifariş yoxdur.", ConsoleColor.Yellow);
                 return;
             }
 
-            Console.Write("Ləğv etmək istədiyiniz Sifariş ID-sini daxil edin: ");
+            Write("  Ləğv etmək istədiyiniz Sifariş ID: ", ConsoleColor.Yellow);
             if (!int.TryParse(Console.ReadLine(), out int orderId))
             {
-                Console.WriteLine("Düzgün ID daxil edin (rəqəm olmalıdır).");
+                Print("  ✗ Düzgün ID daxil edin.", ConsoleColor.Red);
                 return;
             }
 
             Order order = orders.Find(o => o.Id == orderId);
             if (order == null)
             {
-                Console.WriteLine("Bu ID-li sifariş tapılmadı!");
+                Print("  ✗ Bu ID-li sifariş tapılmadı!", ConsoleColor.Red);
                 return;
             }
 
             if (order.Status != OrderStatus.Pending)
             {
-                Console.WriteLine($"\n❌ Bu sifariş ləğv edilə bilməz.");
-                Console.WriteLine($"   Yalnız 'Pending' statusundakı sifarişlər ləğv oluna bilər.");
-                Console.WriteLine($"   Cari status: [{order.Status}]");
+                Print($"\n  ✗ Yalnız 'Pending' sifarişlər ləğv oluna bilər.", ConsoleColor.Red);
+                Print($"  Cari status: [{order.Status}]", ConsoleColor.Yellow);
                 return;
             }
 
@@ -216,86 +228,83 @@ namespace Mini_Project_1.Services
                 if (product != null)
                 {
                     product.Stock += item.Count;
-                    Console.WriteLine($"   ↩ '{product.Name}' stoka geri qaytarıldı (+{item.Count})");
+                    Print($"  ↩ '{product.Name}' stoka geri qaytarıldı (+{item.Count})", ConsoleColor.Yellow);
                 }
             }
             productServices.ProductRepo.Serialize(allProducts);
 
             order.Status = OrderStatus.Cancelled;
             OrderRepo.Serialize(orders);
-
-            Console.WriteLine($"\n✓ #{orderId} nömrəli sifariş ləğv edildi. Məhsullar stoka qaytarıldı.");
+            Print($"\n  ✓ #{orderId} nömrəli sifariş ləğv edildi.", ConsoleColor.Yellow);
         }
+
         public void ShowAllOrders()
         {
             List<Order> orders = OrderRepo.Deserialize();
 
             if (orders.Count == 0)
             {
-                Console.WriteLine("\nSistemdə heç bir sifariş tapılmadı.");
+                Print("\n  Sistemdə heç bir sifariş tapılmadı.", ConsoleColor.Yellow);
                 return;
             }
 
             foreach (var order in orders)
             {
-                Console.WriteLine(new string('-', 40));
-                Console.WriteLine($"Sifariş ID : #{order.Id}");
-                Console.WriteLine($"Müştəri    : {order.Email}");
-                Console.WriteLine($"Tarix      : {order.OrderedAt:dd.MM.yyyy HH:mm}");
-                Console.WriteLine($"Status     : [{order.Status}]");
-                Console.WriteLine($"Çatdırılma : {order.DeliveryType} ({order.DeliveryFee} AZN)");
-                Console.WriteLine("Məhsullar  :");
+                Print("\n  ──────────────────────────────────────", ConsoleColor.DarkRed);
+                Print($"  Sifariş ID : #{order.Id}", ConsoleColor.Yellow);
+                Print($"  Müştəri    : {order.Email}", ConsoleColor.White);
+                Print($"  Tarix      : {order.OrderedAt:dd.MM.yyyy HH:mm}", ConsoleColor.White);
+                Print($"  Status     : [{order.Status}]", ConsoleColor.Yellow);
+                Print($"  Çatdırılma : {order.DeliveryType} ({order.DeliveryFee} AZN)", ConsoleColor.White);
+                Print("  Məhsullar  :", ConsoleColor.Yellow);
                 foreach (var item in order.Items)
-                    Console.WriteLine($"   - {item.Product.Name} | {item.Count} ədəd x {item.Price} AZN = {item.SubTotal} AZN");
+                    Print($"     - {item.Product.Name} | {item.Count} ədəd x {item.Price} AZN = {item.SubTotal} AZN", ConsoleColor.White);
 
-                decimal productSum = order.Items.Sum(i => i.SubTotal);
-                Console.WriteLine($"Subtotal   : {productSum} AZN");
+                decimal ps = order.Items.Sum(i => i.SubTotal);
+                Print($"  Subtotal   : {ps} AZN", ConsoleColor.White);
                 if (order.DiscountPercent > 0)
-                    Console.WriteLine($"Endirim    : -{order.Discount} AZN ({order.DiscountPercent}%)");
-                Console.WriteLine($"Çatdırılma : {order.DeliveryFee} AZN");
-                Console.WriteLine($"YEKUN      : {order.FinalTotal} AZN");
+                    Print($"  Endirim    : -{order.Discount} AZN ({order.DiscountPercent}%)", ConsoleColor.Yellow);
+                Print($"  Çatdırılma : {order.DeliveryFee} AZN", ConsoleColor.White);
+                Print($"  YEKUN      : {order.FinalTotal} AZN", ConsoleColor.Yellow);
             }
-            Console.WriteLine(new string('-', 40));
+            Print("  ──────────────────────────────────────", ConsoleColor.DarkRed);
         }
 
-        // ==========================================
-        // Change Order Status (köhnə metod — eyni)
-        // ==========================================
         public void ChangeOrderStatus()
         {
             List<Order> orders = OrderRepo.Deserialize();
             if (orders.Count == 0)
             {
-                Console.WriteLine("\nSistemdə heç bir sifariş yoxdur.");
+                Print("\n  Sistemdə heç bir sifariş yoxdur.", ConsoleColor.Yellow);
                 return;
             }
 
-            Console.Write("Statusunu dəyişmək istədiyiniz Sifariş ID-sini daxil edin: ");
+            Write("  Statusunu dəyişmək istədiyiniz Sifariş ID: ", ConsoleColor.Yellow);
             if (!int.TryParse(Console.ReadLine(), out int orderId))
             {
-                Console.WriteLine("Düzgün ID formatı daxil edin (rəqəm olmalıdır).");
+                Print("  ✗ Düzgün ID daxil edin.", ConsoleColor.Red);
                 return;
             }
 
             Order order = orders.Find(o => o.Id == orderId);
             if (order == null)
             {
-                Console.WriteLine("Bu ID-li sifariş tapılmadı!");
+                Print("  ✗ Bu ID-li sifariş tapılmadı!", ConsoleColor.Red);
                 return;
             }
 
             if (order.Status == OrderStatus.Cancelled)
             {
-                Console.WriteLine("❌ Ləğv edilmiş sifarişin statusu dəyişdirilə bilməz.");
+                Print("  ✗ Ləğv edilmiş sifarişin statusu dəyişdirilə bilməz.", ConsoleColor.Red);
                 return;
             }
 
-            Console.WriteLine($"\nSifariş tapıldı! Cari Status: [{order.Status}]");
-            Console.WriteLine("Yeni statusu seçin:");
-            Console.WriteLine("  1. Pending");
-            Console.WriteLine("  2. Confirmed");
-            Console.WriteLine("  3. Completed");
-            Console.Write("Seçiminiz (1-3): ");
+            Print($"\n  Cari Status: [{order.Status}]", ConsoleColor.Yellow);
+            Print("  Yeni statusu seçin:", ConsoleColor.Yellow);
+            Print("  1. Pending", ConsoleColor.White);
+            Print("  2. Confirmed", ConsoleColor.White);
+            Print("  3. Completed", ConsoleColor.White);
+            Write("  Seçiminiz (1-3): ", ConsoleColor.Yellow);
 
             string choice = Console.ReadLine()?.Trim();
 
@@ -305,12 +314,12 @@ namespace Mini_Project_1.Services
                 case "2": order.Status = OrderStatus.Confirmed; break;
                 case "3": order.Status = OrderStatus.Completed; break;
                 default:
-                    Console.WriteLine("Yanlış seçim. Status dəyişdirilmədi.");
+                    Print("  ✗ Yanlış seçim. Status dəyişdirilmədi.", ConsoleColor.Red);
                     return;
             }
 
             OrderRepo.Serialize(orders);
-            Console.WriteLine($"\n✓ #{orderId} sifarişin statusu '{order.Status}' olaraq yeniləndi.");
+            Print($"\n  ✓ #{orderId} sifarişin statusu '{order.Status}' olaraq yeniləndi.", ConsoleColor.Yellow);
         }
     }
 }

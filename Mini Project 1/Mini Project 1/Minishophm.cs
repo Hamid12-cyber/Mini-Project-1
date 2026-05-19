@@ -1,11 +1,29 @@
-﻿using Mini_Project_1.Services;
+﻿using Mini_Project_1.Animations;
+using Mini_Project_1.Services;
 
 namespace Mini_Project_1
 {
     internal class Minishophm
     {
+        private static readonly string[] MenuItems =
+        {
+            "1.  Create Product",
+            "2.  Delete Product",
+            "3.  Get Product By Id",
+            "4.  Show All Products",
+            "5.  Refill Product",
+            "6.  Order Product",
+            "7.  Show All Orders",
+            "8.  Change Order Status",
+            "9.  Show Orders By Email",
+            "10. Cancel Order",
+            "0.  Exit"
+        };
+
         public void Run()
         {
+            ConsoleAnimation.SplashScreen("MINI SHOP");
+
             ProductServices productServices = new ProductServices();
             OrderProduct orderProduct = new OrderProduct();
 
@@ -13,20 +31,7 @@ namespace Mini_Project_1
 
             while (isRunning)
             {
-                Console.WriteLine("\n========== MENU ==========");
-                Console.WriteLine("  1. Create Product");
-                Console.WriteLine("  2. Delete Product");
-                Console.WriteLine("  3. Get Product By Id");
-                Console.WriteLine("  4. Show All Products");
-                Console.WriteLine("  5. Refill Product");
-                Console.WriteLine("  6. Order Product");
-                Console.WriteLine("  7. Show All Orders");
-                Console.WriteLine("  8. Change Order Status");
-                Console.WriteLine("  9. Show Orders By Email");
-                Console.WriteLine("  10. Cancel Order");
-                Console.WriteLine("  0. Exit");
-                Console.WriteLine("===========================");
-                Console.Write("Seçim edin: ");
+                ConsoleAnimation.PrintMenu("MINI SHOP", MenuItems);
 
                 string choice = Console.ReadLine();
 
@@ -34,92 +39,103 @@ namespace Mini_Project_1
                 {
                     case "1":
                         Console.Clear();
-                        Console.Write("Ad: "); string name = Console.ReadLine();
-                        Console.Write("Qiymət: "); decimal price = decimal.Parse(Console.ReadLine());
-                        Console.Write("Stok: "); int stock = int.Parse(Console.ReadLine());
+                        ConsoleAnimation.Loading("Məhsul yaratma paneli", 900);
+                        Console.Write("  Ad: "); string name = Console.ReadLine();
+                        Console.Write("  Qiymət: "); decimal price = decimal.Parse(Console.ReadLine());
+                        Console.Write("  Stok: "); int stock = int.Parse(Console.ReadLine());
                         productServices.CreateProduct(name, price, stock);
                         break;
 
                     case "2":
                         Console.Clear();
-                        Console.Write("Silinəcək ID: ");
+                        ConsoleAnimation.Loading("Silmə paneli", 900);
+                        Console.Write("  Silinəcək ID: ");
                         if (int.TryParse(Console.ReadLine(), out int deleteId))
                             productServices.DeleteProduct(deleteId);
                         else
-                            Console.WriteLine("Zəhmət olmasa düzgün ID daxil edin.");
+                            ConsoleAnimation.Error("Düzgün ID daxil edin.");
                         break;
 
                     case "3":
                         Console.Clear();
-                        Console.Write("Axtarılacaq ID: ");
+                        ConsoleAnimation.Loading("Axtarılır", 900);
+                        Console.Write("  Axtarılacaq ID: ");
                         if (int.TryParse(Console.ReadLine(), out int searchId))
                             productServices.GetProductById(searchId);
                         else
-                            Console.WriteLine("Zəhmət olmasa düzgün ID daxil edin.");
+                            ConsoleAnimation.Error("Düzgün ID daxil edin.");
                         break;
 
                     case "4":
                         Console.Clear();
+                        ConsoleAnimation.Loading("Məhsullar yüklənir", 900);
                         productServices.ShowAllProducts();
                         break;
 
                     case "5":
                         Console.Clear();
-                        Console.WriteLine("\n--- Məhsulun Stokunu Artırın ---");
-                        Console.Write("Məhsulun ID-sini daxil edin: ");
+                        ConsoleAnimation.Loading("Stok paneli", 900);
+                        Console.Write("  Məhsulun ID-sini daxil edin: ");
                         if (!int.TryParse(Console.ReadLine(), out int id))
-                        {
-                            Console.WriteLine("ID düzgün formatda deyil (rəqəm olmalıdır).");
-                            break;
-                        }
-                        Console.Write("Artırılacaq miqdarı daxil edin: ");
+                        { ConsoleAnimation.Error("ID düzgün deyil."); break; }
+                        Console.Write("  Artırılacaq miqdar: ");
                         if (!int.TryParse(Console.ReadLine(), out int amount))
-                        {
-                            Console.WriteLine("Miqdar düzgün formatda deyil (rəqəm olmalıdır).");
-                            break;
-                        }
+                        { ConsoleAnimation.Error("Miqdar düzgün deyil."); break; }
                         productServices.RefillProduct(id, amount);
                         break;
 
                     case "6":
                         Console.Clear();
-                        Console.WriteLine("\n--- Yeni Sifariş ---");
+                        ConsoleAnimation.Loading("Sifariş paneli açılır", 900);
+                        ConsoleAnimation.TypeWriteLine("\n  ── YENİ SİFARİŞ ──", delayMs: 14);
                         orderProduct.Orderproduct(productServices);
                         break;
 
                     case "7":
                         Console.Clear();
-                        Console.WriteLine("\n================ BÜTÜN SİFARİŞLƏR ================");
+                        ConsoleAnimation.Loading("Sifarişlər yüklənir", 900);
+                        ConsoleAnimation.TypeWriteLine("\n  ══ BÜTÜN SİFARİŞLƏR ══", delayMs: 12);
                         orderProduct.ShowAllOrders();
                         break;
 
                     case "8":
                         Console.Clear();
+                        ConsoleAnimation.Loading("Status paneli", 900);
                         orderProduct.ChangeOrderStatus();
                         break;
 
                     case "9":
                         Console.Clear();
-                        Console.WriteLine("\n--- Müştəri Sifariş Tarixçəsi ---");
+                        ConsoleAnimation.Loading("Tarixçə yüklənir", 900);
+                        ConsoleAnimation.TypeWriteLine("\n  ── MÜŞTƏRİ TARİXÇƏSİ ──", delayMs: 12);
                         orderProduct.ShowOrdersByEmail();
                         break;
 
                     case "10":
                         Console.Clear();
-                        Console.WriteLine("\n--- Sifarişi Ləğv Et ---");
+                        ConsoleAnimation.Loading("Ləğvetmə paneli", 900);
+                        ConsoleAnimation.TypeWriteLine("\n  ── SİFARİŞİ LƏĞV ET ──", delayMs: 12);
                         orderProduct.CancelOrder(productServices);
                         break;
 
                     case "0":
                         Console.Clear();
+                        ConsoleAnimation.TypeWriteLine("\n  Sistem bağlanır...", delayMs: 30);
+                        ConsoleAnimation.Loading("Çıxılır", 700);
                         isRunning = false;
-                        Console.WriteLine("Proqramdan çıxıldı.");
                         break;
 
                     default:
-                        Console.Clear();
-                        Console.WriteLine("Yanlış seçim! Yenidən cəhd edin.");
+                        ConsoleAnimation.Warning("Yanlış seçim! Yenidən cəhd edin.");
                         break;
+                }
+
+                if (isRunning && choice != "0")
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.Write("\n  [ Enter — menyuya qayıt ]");
+                    Console.ResetColor();
+                    Console.ReadLine();
                 }
             }
         }

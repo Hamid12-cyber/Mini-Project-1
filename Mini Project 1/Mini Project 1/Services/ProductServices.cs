@@ -1,129 +1,124 @@
-﻿using Mini_Project_1.Models;
+﻿using Mini_Project_1.Animations;
+using Mini_Project_1.Models;
 using Mini_Project_1.Repostories;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mini_Project_1.Services
 {
     internal class ProductServices
     {
         internal ProductRepostory ProductRepo { get; set; } = new();
-        
+
+        private static void Print(string text, ConsoleColor color = ConsoleColor.White)
+        {
+            Console.ForegroundColor = color;
+            Console.WriteLine(text);
+            Console.ResetColor();
+        }
+
         public void CreateProduct(string name, decimal price, int stock)
         {
-            List<Product> products = ProductRepo.Deserialize();            
+            List<Product> products = ProductRepo.Deserialize();
             foreach (Product p in products)
             {
-                if (p.Name.ToLower () == name.Trim().ToLower() )
-                {
-                    throw new ArgumentException($"{name} adlı məhsul artıq müvcuddur.Birdaha sınayın"); 
-                }
+                if (p.Name.ToLower() == name.Trim().ToLower())
+                    throw new ArgumentException($"{name} adlı məhsul artıq müvcuddur. Birdaha sınayın");
             }
+
             if (price <= 0 || stock < 0)
             {
-                Console.WriteLine($"Qiymət 0-dan böyük, stok mənfi olmamalıdır!");
+                Print("Qiymət 0-dan böyük, stok mənfi olmamalıdır!", ConsoleColor.Red);
                 return;
             }
+
             Product newProduct = new Product(name, price, stock);
             products.Add(newProduct);
             ProductRepo.Serialize(products);
-            Console.WriteLine($"Məhsul uğurla yaradıldı \n\nMəhsul adı: {newProduct.Name}\nQiymət: {newProduct.Price}\nStok: {newProduct.Stock}");
+
+            Print($"\n  ✓ Məhsul uğurla yaradıldı!", ConsoleColor.Yellow);
+            Print($"  ─────────────────────", ConsoleColor.DarkRed);
+            Print($"  Ad    : {newProduct.Name}", ConsoleColor.White);
+            Print($"  Qiymət: {newProduct.Price} AZN", ConsoleColor.White);
+            Print($"  Stok  : {newProduct.Stock}", ConsoleColor.White);
+            Print($"  ─────────────────────", ConsoleColor.DarkRed);
         }
+
         public void DeleteProduct(int id)
         {
-           List<Product> products = ProductRepo.Deserialize();     
-           
+            List<Product> products = ProductRepo.Deserialize();
             Product productToDelete = null;
-            
+
             foreach (var p in products)
             {
-                if (p.Id == id)
-                {
-                   productToDelete = p;
-                    break;
-                }
+                if (p.Id == id) { productToDelete = p; break; }
             }
-                        
+
             if (productToDelete != null)
             {
-                products.Remove(productToDelete); 
-                ProductRepo.Serialize(products);              
-                Console.WriteLine($" {id} nömrəli məhsul silindi.");
+                products.Remove(productToDelete);
+                ProductRepo.Serialize(products);
+                Print($"\n  ✓ {id} nömrəli məhsul silindi.", ConsoleColor.Yellow);
             }
             else
             {
-                Console.WriteLine($"Bu ID-li məhsul tapılmadı!");
+                Print($"\n  ✗ Bu ID-li məhsul tapılmadı!", ConsoleColor.Red);
             }
         }
+
         public void GetProductById(int id)
-        {           
+        {
             List<Product> products = ProductRepo.Deserialize();
-                        
             Product? foundProduct = products.Find(p => p.Id == id);
-            
+
             if (foundProduct != null)
             {
-                Console.WriteLine("\n--- Məhsul Tapıldı ---");
-                foundProduct.PrintInfo(); 
+                Print("\n  ─── Məhsul Tapıldı ───", ConsoleColor.DarkRed);
+                foundProduct.PrintInfo();
+                Print("  ──────────────────────", ConsoleColor.DarkRed);
             }
             else
             {
-                Console.WriteLine($"{id} ID-li məhsul bazada yoxdur!");
+                Print($"\n  ✗ {id} ID-li məhsul bazada yoxdur!", ConsoleColor.Red);
             }
         }
-        public void ShowAllProducts() 
+
+        public void ShowAllProducts()
         {
-            List <Product> products = ProductRepo.Deserialize();
-            if (products.Count == 0) 
+            List<Product> products = ProductRepo.Deserialize();
+
+            if (products.Count == 0)
             {
-                Console.WriteLine($"Hazırda məhsul yoxdur");
+                Print("\n  Hazırda məhsul yoxdur.", ConsoleColor.Yellow);
                 return;
             }
-            Console.WriteLine($"---Bütün məhsullar---");
-            foreach (var p in products) 
+
+            Print("\n  ─── Bütün Məhsullar ───", ConsoleColor.DarkRed);
+            foreach (var p in products)
             {
-                string stockStatus = p.Stock == 0 ? " - [Out of Stock]" : "";
                 p.PrintInfo();
+                Print("  ──────────────────────", ConsoleColor.DarkRed);
             }
-
         }
-        public void RefillProduct(int id, int amount) 
-        {
-            if (amount <= 0) 
-            {
-                Console.WriteLine($"Daxil olunan stock 0 vəya mənfi ola bilməz");
-            }
-            List<Product>products = ProductRepo.Deserialize();
-            
-            Product? productToUpdate = products.Find(p=>p.Id == id);
 
-            if (productToUpdate == null) 
+        public void RefillProduct(int id, int amount)
+        {
+            if (amount <= 0)
             {
-                Console.WriteLine($"Məhsul tapılmadı");
+                Print("\n  ✗ Daxil olunan stok 0 və ya mənfi ola bilməz.", ConsoleColor.Red);
                 return;
             }
+
+            List<Product> products = ProductRepo.Deserialize();
+            Product? productToUpdate = products.Find(p => p.Id == id);
+
+            if (productToUpdate == null)
+            {
+                Print("\n  ✗ Məhsul tapılmadı.", ConsoleColor.Red);
+                return;
+            }
+
             productToUpdate.Stock += amount;
             ProductRepo.Serialize(products);
-            Console.WriteLine($"Uğurlu! '{productToUpdate.Name}' məhsulunun yeni stoku: {productToUpdate.Stock}");
-
+            Print($"\n  ✓ '{productToUpdate.Name}' məhsulunun yeni stoku: {productToUpdate.Stock}", ConsoleColor.Yellow);
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    
 }

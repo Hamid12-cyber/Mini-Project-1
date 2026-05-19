@@ -360,5 +360,161 @@
     "DeliveryFee": 5.0,
     "Status": "Cancelled",
     "OrderedAt": "2026-05-18T12:51:36.7548568+03:00"
+  },
+  {
+    "Id": 14,
+    "Items": [
+      {
+        "Id": "00000000-0000-0000-0000-000000000000",
+        "Product": {
+          "Name": "Lexus",
+          "Price": 90000.0,
+          "Stock": 14,
+          "Id": 2
+        },
+        "Count": 1,
+        "Price": 90000.0,
+        "SubTotal": 90000.0
+      }
+    ],
+    "Total": 90000.0,
+    "DiscountPercent": 10.0,
+    "Discount": 9000.0,
+    "FinalTotal": 81000.0,
+    "Email": "tural@bravo",
+    "DeliveryType": "Özüm götürəcəm",
+    "DeliveryFee": 0.0,
+    "Status": "Cancelled",
+    "OrderedAt": "2026-05-18T13:55:05.6674359+03:00"
+  },
+  {
+    "Id": 15,
+    "Items": [
+      {
+        "Id": "00000000-0000-0000-0000-000000000000",
+        "Product": {
+          "Name": "Lexus",
+          "Price": 90000.0,
+          "Stock": 14,
+          "Id": 2
+        },
+        "Count": 1,
+        "Price": 90000.0,
+        "SubTotal": 90000.0
+      }
+    ],
+    "Total": 90005.0,
+    "DiscountPercent": 10.0,
+    "Discount": 9000.0,
+    "FinalTotal": 81005.0,
+    "Email": "hamid@code.edu.az",
+    "DeliveryType": "Kuryer ilə",
+    "DeliveryFee": 5.0,
+    "Status": "Pending",
+    "OrderedAt": "2026-05-19T10:21:20.3899525+03:00"
+  },
+  {
+    "Id": 16,
+    "Items": [
+      {
+        "Id": "00000000-0000-0000-0000-000000000000",
+        "Product": {
+          "Name": "Mazda",
+          "Price": 30000.0,
+          "Stock": 83,
+          "Id": 3
+        },
+        "Count": 1,
+        "Price": 30000.0,
+        "SubTotal": 30000.0
+      }
+    ],
+    "Total": 30000.0,
+    "DiscountPercent": 10.0,
+    "Discount": 3000.0,
+    "FinalTotal": 27000.0,
+    "Email": "hamid@mail.rp",
+    "DeliveryType": "Özüm götürəcəm",
+    "DeliveryFee": 0.0,
+    "Status": "Pending",
+    "OrderedAt": "2026-05-19T10:41:53.2791832+03:00"
+  },
+  {
+    "Id": 17,
+    "Items": [
+      {
+        "Id": "00000000-0000-0000-0000-000000000000",
+        "Product": {
+          "Name": "Mazda",
+          "Price": 30000.0,
+          "Stock": 81,
+          "Id": 3
+        },
+        "Count": 2,
+        "Price": 30000.0,
+        "SubTotal": 60000.0
+      }
+    ],
+    "Total": 60000.0,
+    "DiscountPercent": 10.0,
+    "Discount": 6000.0,
+    "FinalTotal": 54000.0,
+    "Email": "hamid@",
+    "DeliveryType": "Özüm götürəcəm",
+    "DeliveryFee": 0.0,
+    "Status": "Pending",
+    "OrderedAt": "2026-05-19T10:51:00.6680883+03:00"
+  },
+  {
+    "Id": 18,
+    "Items": [
+      {
+        "Id": "00000000-0000-0000-0000-000000000000",
+        "Product": {
+          "Name": "Lexus",
+          "Price": 90000.0,
+          "Stock": 3,
+          "Id": 2
+        },
+        "Count": 11,
+        "Price": 90000.0,
+        "SubTotal": 990000.0
+      }
+    ],
+    "Total": 990000.0,
+    "DiscountPercent": 10.0,
+    "Discount": 99000.0,
+    "FinalTotal": 891000.0,
+    "Email": "@s",
+    "DeliveryType": "Özüm götürəcəm",
+    "DeliveryFee": 0.0,
+    "Status": "Pending",
+    "OrderedAt": "2026-05-19T15:12:02.6802524+03:00"
+  },
+  {
+    "Id": 19,
+    "Items": [
+      {
+        "Id": "92ba7119-e3a1-4a5a-8d50-ff5c85c9c0d1",
+        "Product": {
+          "Name": "Lexus",
+          "Price": 90000.0,
+          "Stock": 1,
+          "Id": 2
+        },
+        "Count": 2,
+        "Price": 90000.0,
+        "SubTotal": 180000.0
+      }
+    ],
+    "Total": 180005.0,
+    "DiscountPercent": 10.0,
+    "Discount": 18000.0,
+    "FinalTotal": 162005.0,
+    "Email": "@sa",
+    "DeliveryType": "Kuryer ilə",
+    "DeliveryFee": 5.0,
+    "Status": "Pending",
+    "OrderedAt": "2026-05-19T15:14:39.7034653+03:00"
   }
 ]

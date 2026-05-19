@@ -2,13 +2,13 @@
   {
     "Name": "Lexus",
     "Price": 90000.0,
-    "Stock": 15,
+    "Stock": 1,
     "Id": 2
   },
   {
     "Name": "Mazda",
     "Price": 30000.0,
-    "Stock": 84,
+    "Stock": 81,
     "Id": 3
   },
   {
@@ -40,5 +40,11 @@
     "Price": 12.0,
     "Stock": 32,
     "Id": 8
+  },
+  {
+    "Name": "Kamaz",
+    "Price": 1.0,
+    "Stock": 2,
+    "Id": 9
   }
 ]

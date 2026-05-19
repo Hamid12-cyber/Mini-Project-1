@@ -1,5 +1,6 @@
 ﻿using Mini_Project_1.AbstractClasses;
 using Mini_Project_1.Enums;
+using Mini_Project_1.Animations;
 
 namespace Mini_Project_1.Models
 {
@@ -94,24 +95,33 @@ namespace Mini_Project_1.Models
         }
         public void PrintReceipt()
         {
-            Console.WriteLine("\n========= İnvoice =========");
-            Console.WriteLine($"Order No   : #{Id}");
-            Console.WriteLine($"Email      : {Email}");
-            Console.WriteLine($"Date       : {OrderedAt:dd.MM.yyyy HH:mm}");
-            Console.WriteLine($"Delivery   : {DeliveryType}");
-            Console.WriteLine("---------------------------");
-            foreach (var item in Items)
+            var lines = new List<string>();
+            lines.Add("========= RECEIPT =========");
+            lines.Add($"Order No   : #{Id}");
+            lines.Add($"Email      : {Email}");
+            lines.Add($"Date       : {OrderedAt:dd.MM.yyyy HH:mm}");
+            lines.Add($"Delivery   : {DeliveryType}");
+            lines.Add("---------------------------");
+
+            for (int i = 0; i < Items.Count; i++)
             {
-                Console.WriteLine($"  {item.Product.Name} x{item.Count} = {item.SubTotal} AZN");
+                var item = Items[i];
+                lines.Add($"  #{i + 1} [{item.Id}]");
+                lines.Add($"  {item.Product.Name} x{item.Count} = {item.SubTotal} AZN");
             }
-            Console.WriteLine("---------------------------");
-            Console.WriteLine($"  Subtotal   : {Total - DeliveryFee} AZN");
+
+            lines.Add("---------------------------");
+            lines.Add($"  Subtotal   : {Total - DeliveryFee} AZN");
+
             if (DiscountPercent > 0)
-                Console.WriteLine($"  Discount   : -{Discount} AZN ({DiscountPercent}%)");
-            Console.WriteLine($"  Delivery   : {DeliveryFee} AZN");
-            Console.WriteLine($"  TOTAL      : {FinalTotal} AZN");
-            Console.WriteLine($"  STATUS     : {Status}");
-            Console.WriteLine("===========================\n");
+                lines.Add($"  Discount   : -{Discount} AZN ({DiscountPercent}%)");
+
+            lines.Add($"  Delivery   : {DeliveryFee} AZN");
+            lines.Add($"  TOTAL      : {FinalTotal} AZN");
+            lines.Add($"  STATUS     : {Status}");
+            lines.Add("===========================");
+
+            ConsoleAnimation.PrintReceiptAnimated(lines.ToArray());
         }
     }
 }
