@@ -87,6 +87,13 @@
       "Stock": 1,
       "Id": 21,
       "Category": "Digər"
+    },
+    {
+      "Name": "RƏf",
+      "Price": 90.0,
+      "Stock": 10,
+      "Id": 22,
+      "Category": "Digər"
     }
   ]
 }
