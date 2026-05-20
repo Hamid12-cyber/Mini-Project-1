@@ -1,0 +1,13 @@
+{
+  "Elektronika": [],
+  "Maşın": [],
+  "Digər": [
+    {
+      "Name": "Palto",
+      "Price": 150.0,
+      "Stock": 30,
+      "Id": 1,
+      "Category": "Digər"
+    }
+  ]
+}

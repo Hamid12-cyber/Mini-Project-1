@@ -1,0 +1,21 @@
+{
+  "Elektronika": [
+    {
+      "Name": "Paltaryuyan",
+      "Price": 450.0,
+      "Stock": 198,
+      "Id": 1,
+      "Category": "Elektronika"
+    }
+  ],
+  "Maşın": [
+    {
+      "Name": "Toyota",
+      "Price": 450.0,
+      "Stock": 12,
+      "Id": 2,
+      "Category": "Maşın"
+    }
+  ],
+  "Digər": []
+}

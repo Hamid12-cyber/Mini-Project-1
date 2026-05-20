@@ -9,7 +9,7 @@ namespace Mini_Project_1.Models
     internal class OrderItem
     {           
              
-        public Guid Id { get;  }
+        public Guid Id { get; init; } = Guid.NewGuid();
 
         public Product Product { get; set; }
         public int Count { get; set; }

@@ -1,9 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 
 namespace Mini_Project_1.Repostories
 {
@@ -11,47 +9,67 @@ namespace Mini_Project_1.Repostories
     {
         public readonly string _path;
 
-        public Repostories(string path)
+        public Repostories(string relativePath)
         {
-            _path = path;
+            string currentDir = AppDomain.CurrentDomain.BaseDirectory;
+
+            string targetKey = "Mini projecthm";
+            int keyIndex = relativePath.IndexOf(targetKey, StringComparison.OrdinalIgnoreCase);
+
+            if (keyIndex != -1)
+            {
+                string cleanRelativePath = relativePath.Substring(keyIndex);
+
+                int dirIndex = currentDir.IndexOf(targetKey, StringComparison.OrdinalIgnoreCase);
+
+                if (dirIndex != -1)
+                {
+                    string rootPath = currentDir.Substring(0, dirIndex);
+                    _path = Path.Combine(rootPath, cleanRelativePath);
+                }
+                else
+                {
+                    _path = Path.Combine(currentDir, relativePath);
+                }
+            }
+            else
+            {
+                _path = Path.Combine(currentDir, relativePath);
+            }
+
+            Console.WriteLine("PATH: " + _path);
+
+            Directory.CreateDirectory(Path.GetDirectoryName(_path)!);
         }
-        public void Serialize(List<T> items)
+
+        public virtual void Serialize(List<T> items)
         {
             var settings = new JsonSerializerSettings()
             {
                 Formatting = Formatting.Indented,
                 Converters = new List<JsonConverter>() { new Newtonsoft.Json.Converters.StringEnumConverter() }
             };
-            Directory.CreateDirectory(Path.GetDirectoryName(_path));
-            string json = JsonConvert.SerializeObject(items, settings);
-            using (StreamWriter sw = new StreamWriter(_path))
-            {
-                sw.Write(json);
-            }
-
-
+            File.WriteAllText(_path, JsonConvert.SerializeObject(items, settings));
         }
-        public List<T> Deserialize()
+
+        public virtual List<T> Deserialize()
         {
             if (!File.Exists(_path))
                 return new List<T>();
-            string json;
 
-            using (StreamReader sr = new StreamReader(_path))
-            {
-                json = sr.ReadToEnd();
-            }
+            string json = File.ReadAllText(_path);
+
             if (string.IsNullOrWhiteSpace(json))
                 return new List<T>();
 
-            List<T> list = JsonConvert.DeserializeObject<List<T>>(json);
+            List<T> list = JsonConvert.DeserializeObject<List<T>>(json) ?? new List<T>();
 
-            if (list != null && list.Count > 0)
+            if (list.Count > 0)
                 SyncFromList(list);
-            return list ?? new List<T>();
 
-
+            return list;
         }
-          protected virtual void SyncFromList(List<T> list) { }
+
+        protected virtual void SyncFromList(List<T> list) { }
     }
 }

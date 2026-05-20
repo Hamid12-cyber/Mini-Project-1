@@ -1,0 +1,28 @@
+{
+  "Elektronika": [
+    {
+      "Name": "Toyota",
+      "Price": 40000.0,
+      "Stock": 1,
+      "Id": 1,
+      "Category": "Elektronika"
+    }
+  ],
+  "Maşın": [],
+  "Digər": [
+    {
+      "Name": "Kurtka",
+      "Price": 200.0,
+      "Stock": 20,
+      "Id": 2,
+      "Category": "Digər"
+    },
+    {
+      "Name": "Palto",
+      "Price": 150.0,
+      "Stock": 20,
+      "Id": 3,
+      "Category": "Digər"
+    }
+  ]
+}

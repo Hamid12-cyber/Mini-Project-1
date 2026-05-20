@@ -1,0 +1,29 @@
+[
+  {
+    "Id": 1,
+    "Items": [
+      {
+        "Id": "d70a7243-c48e-4e3f-bdc9-23485fc94aff",
+        "Product": {
+          "Name": "Soyuducu",
+          "Price": 900.0,
+          "Stock": 98,
+          "Id": 4,
+          "Category": "Elektronika"
+        },
+        "Count": 2,
+        "Price": 900.0,
+        "SubTotal": 1800.0
+      }
+    ],
+    "Total": 1805.0,
+    "DiscountPercent": 10.0,
+    "Discount": 180.0,
+    "FinalTotal": 1625.0,
+    "Email": "hamid@code.edu.az",
+    "DeliveryType": "Kuryer ile: hddssd",
+    "DeliveryFee": 5.0,
+    "Status": "Pending",
+    "OrderedAt": "2026-05-20T11:49:28.0826118+03:00"
+  }
+]

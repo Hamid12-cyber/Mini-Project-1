@@ -1,0 +1,50 @@
+{
+  "Elektronika": [
+    {
+      "Name": "Paltaryuyan",
+      "Price": 450.0,
+      "Stock": 100,
+      "Id": 2,
+      "Category": "Elektronika"
+    },
+    {
+      "Name": "Soyuducu",
+      "Price": 900.0,
+      "Stock": 98,
+      "Id": 4,
+      "Category": "Elektronika"
+    },
+    {
+      "Name": "Televizor",
+      "Price": 10.0,
+      "Stock": 1,
+      "Id": 5,
+      "Category": "Elektronika"
+    }
+  ],
+  "Maşın": [
+    {
+      "Name": "Toyota",
+      "Price": 30000.0,
+      "Stock": 1000,
+      "Id": 3,
+      "Category": "Maşın"
+    }
+  ],
+  "Digər": [
+    {
+      "Name": "Saz",
+      "Price": 1.0,
+      "Stock": 23,
+      "Id": 1,
+      "Category": "Digər"
+    },
+    {
+      "Name": "Palto",
+      "Price": 150.0,
+      "Stock": 50,
+      "Id": 6,
+      "Category": "Digər"
+    }
+  ]
+}

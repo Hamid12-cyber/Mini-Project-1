@@ -1,4 +1,6 @@
-﻿namespace Mini_Project_1.Enums
+﻿using System.Runtime.Serialization;
+
+namespace Mini_Project_1.Enums
 {
     internal enum OrderStatus
     {
@@ -6,5 +8,17 @@
         Confirmed,
         Completed,
         Cancelled
+    }
+
+    internal enum ProductCategory
+    {
+        [EnumMember(Value = "Elektronika")]
+        Elektronika,
+
+        [EnumMember(Value = "Maşın")]
+        Maşın,
+
+        [EnumMember(Value = "Digər")]
+        Digər
     }
 }

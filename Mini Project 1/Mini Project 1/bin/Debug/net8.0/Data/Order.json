@@ -1,0 +1,56 @@
+[
+  {
+    "Id": 1,
+    "Items": [
+      {
+        "Id": "7cb88e44-e97f-4b9e-ba5d-cf0de30b6977",
+        "Product": {
+          "Name": "Paltaryuyan",
+          "Price": 450.0,
+          "Stock": 199,
+          "Id": 1,
+          "Category": "Elektronika"
+        },
+        "Count": 1,
+        "Price": 450.0,
+        "SubTotal": 450.0
+      }
+    ],
+    "Total": 455.0,
+    "DiscountPercent": 10.0,
+    "Discount": 45.0,
+    "FinalTotal": 410.0,
+    "Email": "jako@ks",
+    "DeliveryType": "Kuryer ile: dkdskdsk",
+    "DeliveryFee": 5.0,
+    "Status": "Pending",
+    "OrderedAt": "2026-05-20T11:37:58.2954593+03:00"
+  },
+  {
+    "Id": 2,
+    "Items": [
+      {
+        "Id": "6fd52e5e-e077-423f-b5cd-1e289d63524e",
+        "Product": {
+          "Name": "Paltaryuyan",
+          "Price": 450.0,
+          "Stock": 198,
+          "Id": 1,
+          "Category": "Elektronika"
+        },
+        "Count": 1,
+        "Price": 450.0,
+        "SubTotal": 450.0
+      }
+    ],
+    "Total": 450.0,
+    "DiscountPercent": 10.0,
+    "Discount": 45.0,
+    "FinalTotal": 405.0,
+    "Email": "kasaka@",
+    "DeliveryType": "Özüm götürəcəm",
+    "DeliveryFee": 0.0,
+    "Status": "Pending",
+    "OrderedAt": "2026-05-20T11:38:52.3735889+03:00"
+  }
+]

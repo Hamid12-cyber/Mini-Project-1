@@ -1,6 +1,5 @@
 ﻿using Mini_Project_1.AbstractClasses;
 using Mini_Project_1.Enums;
-using Mini_Project_1.Animations;
 
 namespace Mini_Project_1.Models
 {
@@ -11,33 +10,32 @@ namespace Mini_Project_1.Models
 
         public int Id { get; set; }
         public List<OrderItem> Items { get; set; } = new List<OrderItem>();
-                
+
         public decimal Total
         {
-            get
-            {
-                decimal sum = Items.Sum(item => item.SubTotal);
-                return sum + DeliveryFee;
-            }
-        }     
+            get { return Items.Sum(item => item.SubTotal) + DeliveryFee; }
+        }
+
         public decimal DiscountPercent
         {
             get
             {
-                decimal productSum = Items.Sum(item => item.SubTotal);
-                if (productSum >= 300) return 10;
-                if (productSum >= 100) return 5;
+                decimal ps = Items.Sum(item => item.SubTotal);
+                if (ps >= 300) return 10;
+                if (ps >= 100) return 5;
                 return 0;
             }
         }
+
         public decimal Discount
         {
             get
             {
-                decimal productSum = Items.Sum(item => item.SubTotal);
-                return Math.Round(productSum * DiscountPercent / 100, 2);
+                decimal ps = Items.Sum(item => item.SubTotal);
+                return Math.Round(ps * DiscountPercent / 100, 2);
             }
-        }       
+        }
+
         public decimal FinalTotal => Total - Discount;
 
         public string Email
@@ -46,7 +44,7 @@ namespace Mini_Project_1.Models
             set
             {
                 if (!value.Contains('@'))
-                    throw new ArgumentException("Yanlış format. Emaildə @ işarəsi vacibdir.");
+                    Console.WriteLine("Emailde @ isaresi vacibdir.");
                 _email = value;
             }
         }
@@ -75,53 +73,112 @@ namespace Mini_Project_1.Models
                 _idCounter = maxExistingId + 1;
         }
 
+        private static void Row(string label, string value, ConsoleColor valColor = ConsoleColor.White)
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write($"  | {label,-14} ");
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.Write(": ");
+            Console.ForegroundColor = valColor;
+            Console.WriteLine($"{value,-36} |");
+            Console.ResetColor();
+        }
+
+        private static void Divider()
+        {
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine("  +----------------+--------------------------------------+");
+            Console.ResetColor();
+        }
+
+        private static void TopBot(bool top)
+        {
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine(top
+                ? "  +================+======================================+"
+                : "  +================+======================================+");
+            Console.ResetColor();
+        }
+
         public override void PrintInfo()
         {
-            Console.WriteLine($"  Sifariş nömrəsi : {Id}");
-            Console.WriteLine($"  Email            : {Email}");
-            Console.WriteLine($"  Statusu          : {Status}");
-            Console.WriteLine($"  Sifariş tarixi   : {OrderedAt}");
-            Console.WriteLine($"  Məhsul cəmi      : {Total - DeliveryFee} AZN");
+            TopBot(true);
+            Row("Sifaris No", $"#{Id}", ConsoleColor.Yellow);
+            Divider();
+            Row("Email", Email);
+            Row("Status", Status.ToString(), ConsoleColor.Yellow);
+            Row("Tarix", OrderedAt.ToString("dd.MM.yyyy HH:mm"));
+            Row("Catdirilma", $"{DeliveryType} ({DeliveryFee} AZN)");
+            Divider();
+            Row("Mehsul cemi", $"{Total - DeliveryFee} AZN");
             if (DiscountPercent > 0)
-            {
-                Console.WriteLine($"  Endirim ({DiscountPercent}%)   : -{Discount} AZN");
-            }
-            Console.WriteLine($"  Çatdırılma       : {DeliveryFee} AZN");
-            Console.WriteLine($"  Yekun məbləğ     : {FinalTotal} AZN");
-            foreach (var item in Items)
-            {
-                Console.WriteLine($"    - {item.Product.Name} x{item.Count}  @{item.Price} AZN  => {item.SubTotal} AZN");
-            }
+                Row($"Endirim {DiscountPercent}%", $"-{Discount} AZN", ConsoleColor.Yellow);
+            Row("Catdirilma", $"{DeliveryFee} AZN");
+            Row("YEKUN", $"{FinalTotal} AZN", ConsoleColor.Yellow);
+            TopBot(false);
         }
+
         public void PrintReceipt()
         {
-            var lines = new List<string>();
-            lines.Add("========= RECEIPT =========");
-            lines.Add($"Order No   : #{Id}");
-            lines.Add($"Email      : {Email}");
-            lines.Add($"Date       : {OrderedAt:dd.MM.yyyy HH:mm}");
-            lines.Add($"Delivery   : {DeliveryType}");
-            lines.Add("---------------------------");
+            Console.Clear();
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine("  +================================================+");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("  |              *** RECEIPT ***                   |");
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine("  +================================================+");
+            Console.ResetColor();
+
+            Row("Order No", $"#{Id}", ConsoleColor.Yellow);
+            Row("Email", Email);
+            Row("Tarix", OrderedAt.ToString("dd.MM.yyyy HH:mm"));
+            Row("Catdirilma", DeliveryType);
+
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine("  +--------+------------------------+-----+-----------+");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("  | No     | Mehsul                 | Say | Mebleg    |");
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine("  +--------+------------------------+-----+-----------+");
+            Console.ResetColor();
 
             for (int i = 0; i < Items.Count; i++)
             {
                 var item = Items[i];
-                lines.Add($"  #{i + 1} [{item.Id}]");
-                lines.Add($"  {item.Product.Name} x{item.Count} = {item.SubTotal} AZN");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("  | #{0,-5} | {1,-22} | {2,-3} | {3,-9} |",
+                    i + 1,
+                    item.Product.Name,
+                    item.Count,
+                    item.SubTotal.ToString("0.00") + " AZN");
+                Console.ResetColor();
             }
 
-            lines.Add("---------------------------");
-            lines.Add($"  Subtotal   : {Total - DeliveryFee} AZN");
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine("  +--------+------------------------+-----+-----------+");
+            Console.ResetColor();
+
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine("  +================================================+");
+            Console.ResetColor();
+
+            Row("Subtotal", $"{Total - DeliveryFee:0.00} AZN");
 
             if (DiscountPercent > 0)
-                lines.Add($"  Discount   : -{Discount} AZN ({DiscountPercent}%)");
+                Row($"Endirim {DiscountPercent}%", $"-{Discount:0.00} AZN", ConsoleColor.Yellow);
 
-            lines.Add($"  Delivery   : {DeliveryFee} AZN");
-            lines.Add($"  TOTAL      : {FinalTotal} AZN");
-            lines.Add($"  STATUS     : {Status}");
-            lines.Add("===========================");
+            Row("Catdirilma", $"{DeliveryFee:0.00} AZN");
 
-            ConsoleAnimation.PrintReceiptAnimated(lines.ToArray());
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine("  +------------------------------------------------+");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("  | TOTAL          : {0,-34}|", $"{FinalTotal:0.00} AZN");
+            Console.WriteLine("  | STATUS         : {0,-34}|", Status.ToString());
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine("  +================================================+");
+            Console.ResetColor();
+            Console.WriteLine();
         }
     }
 }

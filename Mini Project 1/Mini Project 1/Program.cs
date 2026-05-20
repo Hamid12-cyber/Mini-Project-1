@@ -1,5 +1,6 @@
 ﻿using Mini_Project_1.Models;
 using Mini_Project_1.Services;
+using System.Text;
 
 namespace Mini_Project_1
 {
@@ -7,8 +8,12 @@ namespace Mini_Project_1
     {
         static void Main(string[] args)
         {
-            Console.OutputEncoding = System.Text.Encoding.UTF8;
-            Console.InputEncoding = System.Text.Encoding.UTF8;
+            Console.InputEncoding = Encoding.Unicode;
+            Console.OutputEncoding = Encoding.Unicode;
+            System.Globalization.CultureInfo.DefaultThreadCurrentCulture =
+                new System.Globalization.CultureInfo("az-Latn-AZ");
+            System.Globalization.CultureInfo.DefaultThreadCurrentUICulture =
+                new System.Globalization.CultureInfo("az-Latn-AZ");
             Minishophm minishophm = new Minishophm();
             minishophm.Run();
         }
